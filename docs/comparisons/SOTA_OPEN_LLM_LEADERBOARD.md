@@ -1,72 +1,175 @@
-# 2026 最新全球开源大模型前沿榜单与 SOTA 梯队全景 (2026 Open LLM Leaderboard & Frontier SOTA)
+# 全模态开源大模型前沿排行榜与 SOTA 梯队全景 (Omni-Modal Open AI Leaderboard & SOTA Matrix)
 
-> **数据基准更新至：2026 年第 3/4 季度**  
-> 权威评测源参照：**Hugging Face Open LLM 排行榜、LMSYS Chatbot Arena 人类盲测评测、DeepSWE v1.1、Terminal-Bench 2.1/3.0/4.0 智能体代码基准、MathArena Apex & AIME 数学竞技榜**。
-
----
-
-## 1. 2026 全球开源第一梯队天梯总榜 (Global SOTA Matrix)
-
-进入 2026 年，开源前沿模型已彻底打破传统单纯依靠密集基座（Dense）堆砌的旧格局，全面普及 **细粒度 MoE (高达 384 专家)、多模态原生一体 (Native Vision/Audio)、1M 极限长窗口、分层 KV 压缩与连续可控深度思考机制 (Controllable Reasoning Effort 1-100)**。
-
-| 排名与定位 | 模型名称 | 开源机构 | 架构形态 | 激活参数 / 总参数 | 上下文窗口 | 权威登顶优势与核心杀手级技术 (2026 SOTA) |
-|:---:|---|---|---|---|---|---|
-| 👑 **全球开源综合王座** | **DeepSeek-V4.1-Flash** | 深度求索 (DeepSeek) | Native Multimodal MoE | **8B~16B / 552B** | **1M (1,048,576)** | **2026 现象级霸榜之作**。Codeforces Rating 3471，DeepSWE v1.1 解决率 74.2%（反超 Opus 5.0 与 GPT-5.6）；全新 384 细粒度专家 + DSpark 稀疏架构 + 极限 KV 压缩 + 1-100 可控连续思考 |
-| 🏆 **万亿超大旗舰基座** | **DeepSeek-V4-Pro** | 深度求索 (DeepSeek) | 极致 Sparse MoE | **49B / 1.6T (1600B)** | **1M (1,048,576)** | 1.6 万亿参数开源超大基座；384 选 6 路由专家；全方位世界知识 (SuperGPQA 53.9, SimpleQA 55.2) 领跑开源界 |
-| 🚀 **开源社区最火 Dense 霸主** | **Qwen 3.8-27B** | 阿里巴巴 (Qwen) | Native Multimodal Dense | **27B / 27B** | **262k (原生 1M 扩展)** | **Hugging Face 2026 年度热度第一 (1.7万+ Likes / 670万+ 下载)**；端到端原生图像视频理解 + 灵活思考链控制；Terminal Bench 73.0 / SWE-bench Pro 61.7，单卡/消费级 4090 部署极佳主力 |
-| ⚡ **超高吞吐 MoE 标杆** | **Qwen 3.6-35B-A3B** | 阿里巴巴 (Qwen) | 稀疏 MoE | **3B / 35B** | **128k** | 激活参数仅 3B 却达到 35B 稠密性能；极限生成推理速度，广泛用于高并发 Agent 与工作流编排 |
-| 🧠 **数学/RL 深度逻辑基石** | **DeepSeek-R1-0528** | 深度求索 (DeepSeek) | MoE (纯强化学习) | **37B / 671B** | **128k** | 继 R1 之后的深度长思维链迭代版本；AIME/MATH-500 与竞赛编程顶峰，彻底确立开源“慢思考”范式 |
-| 🐘 **巨型工业级 MoE** | **Mistral Large 3-675B** | Mistral AI | 工业级稀疏 MoE | **41B / 675B** | **128k** | 欧洲旗舰开源基座；原生适配 NVIDIA NVFP4 量化；极佳的复杂函数调用 (Function Calling) 与多语言表现 |
-| 🪶 **超高效生产主力** | **Mistral Small 4-119B** | Mistral AI | 高效 MoE / Hybrid | **~14B / 119B** | **128k** | 专为企业级私有化与高并发代码推理优化；集成 Eagle 推测解码加速 |
-| 💎 **端侧/多模态极致性能** | **Gemma-4-31B-it** | Google DeepMind | 原生多模态 Dense | **31B / 31B** | **262k** | 统一语言/视觉/音频多模态架构；60 层深度，结合 1024 滑动窗口注意力；在 Agentic 任务中表现亮眼 |
-| 💡 **全能稠密中坚力量** | **Llama 3.3 70B-Inst** | Meta AI | 稠密基座 (Dense) | **70B / 70B** | **128k** | 405B 全量蒸馏之作，全球开发生态与推理框架兼容度第一，开源社区企业级首选微调底座之一 |
-| 🔬 **紧凑端侧推理王者** | **Phi-4 (14B)** | 微软 (Microsoft) | 紧凑 Dense | **14B / 14B** | **16k/128k** | 14B 尺寸单挑更大规模模型的数理与合成数据推理，教育与端侧嵌入式高智商典范 |
+> **覆盖模态**：通用语言/推理、端侧小模型、代码/软件工程 Agent、多模态视觉语言 (VLM)、视频理解、文生图、文生视频/图生视频、语音识别 (ASR)、向量嵌入与重排 (Embedding / Reranker)。  
+> **数据基准**：严格对应 [`model-intelligence-crawler`](../../.agents/skills/model-intelligence-crawler/SKILL.md) 技能中的 11 个权威活体评测站点。
 
 ---
 
-## 2. 2026 前沿开源大模型四大核心竞技场
+## 1. 全模态开源 SOTA 矩阵总览 (Omni-Modal SOTA Overview)
 
-### 2.1 竞技场一：智能体与工程代码 (Agentic Terminal & SWE-Bench)
-*评测基准：Terminal-Bench 2.1/3.0/4.0, DeepSWE v1.1, LiveCodeBench, Codeforces Rating*
-
-- **👑 冠军：DeepSeek-V4.1-Flash**
-  - **Codeforces 天梯分达到 3471**；
-  - **Terminal-Bench 2.1 达到 90.6%**（压制 Opus 5.0 的 89.1% 与 GPT-5.6 的 88.8%）；
-  - **DeepSWE v1.1 真实软件缺陷修复率达 74.2%**，成为全球开发者公认的开源本地编程与 Agent 辅助头牌。
-- **🥈 亚军与最强消费级主力：Qwen3.8-27B**
-  - 在 SWE-bench Pro 达 61.7%，Terminal Bench 达 73.0%，具备极强的长程任务执行与自主工具调用能力，24GB 显存即可量化流畅运行。
-
-### 2.2 竞技场二：世界级知识与极限容量 (World Knowledge & Scaling)
-*评测基准：MMLU-Pro, SuperGPQA, SimpleQA-Verified, LongBench-V2*
-
-- **👑 冠军：DeepSeek-V4-Pro (1.6T)**
-  - 1.6 万亿参数规模，激活仅 49B。在 SuperGPQA (53.9%)、SimpleQA-Verified (55.2%) 展现出无与伦比的深层事实知识检索与长程上下文推导能力。
-- **🥈 亚军：Mistral Large 3 (675B)**
-  - 675B 规模的欧洲开源之王，支持原生 NVFP4 低精度无损运行，在多语言泛化与跨文化理解上极其出众。
-
-### 2.3 竞技场三：端侧与单卡性价比之王 (Single GPU & Edge Dominance)
-*评测基准：Hugging Face 下载量、开源社区生态、单位参数吞吐*
-
-- **👑 冠军：Qwen3.8-27B (Dense)**
-  - Hugging Face **17,000+ 点赞、单月 670万+ 次下载**，成为 2026 年开发者在本地服务器、工作站和企业自建服务中最广泛部署的开源模型。
-- **🥈 亚军：Qwen3.6-35B-A3B (MoE)**
-  - 仅激活 3B 参数，首 Token 延迟与持续流式吐字速度极快，是本地自动化 Agent 循环执行的最佳选择。
-- **🥉 季军：Gemma-4-31B-it (Google)**
-  - Google 原生一体化多模态（Text + Audio + Image），为端侧富媒体交互带来革新。
-
-### 2.4 竞技场四：强化学习与自省慢思考 (Reasoning & Controllable RL)
-*评测基准：AIME 2024/2025, MathArena Apex, GPQA Diamond*
-
-- **👑 霸主：DeepSeek-R1-0528 与 DeepSeek-V4.1-Flash (Controllable Effort 1~100)**
-  - **连续可控思考机制**：摆脱了一成不变的长思维链，允许开发者在 1 至 100 之间无级调节思考深度（Reasoning Effort）。在 `effort=100` 下，MathArena Apex 达到 65.6%，GPQA Diamond 达到 90.9%。
+```
+┌──────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                               全球开源 AI 各领域顶流王者 (SOTA Snapshot)                           │
+├─────────────────────────┬────────────────────────────┬────────────────────────┬──────────────────┤
+│ 领域 / 模态             │ 当前 SOTA 开源模型         │ 所属机构               │ 核心权威评测基准 │
+├─────────────────────────┼────────────────────────────┼────────────────────────┼──────────────────┤
+│ 通用 LLM / 旗舰推理     │ DeepSeek-V3 / DeepSeek-R1  │ 深度求索 (DeepSeek)    │ AA Open Source   │
+│ 端侧轻量小模型 (≤4B)    │ Qwen2.5-3B / Llama-3.2-3B  │ 阿里 Qwen / Meta       │ AA Tiny Models   │
+│ 代码生成与竞赛编程      │ Qwen2.5-Coder-32B-Inst     │ 阿里巴巴 (Qwen)        │ LiveCodeBench    │
+│ 软件工程 Agent          │ DeepSeek-R1 / Qwen2.5-Coder│ DeepSeek / 阿里 Qwen   │ SWE-bench        │
+│ 多模态视觉语言 (VLM)    │ Qwen2.5-VL-72B / InternVL2.5│ 阿里 Qwen / OpenGVLab  │ Open VLM (HF)    │
+│ 视频理解 (Video-LLM)    │ Qwen2.5-VL / MiniCPM-V 2.6 │ 阿里 Qwen / 面壁智能   │ OpenCompass Video│
+│ 图像生成 (Text-to-Image)│ FLUX.1 [dev]               │ Black Forest Labs      │ AA Image Arena   │
+│ 视频生成 (Text-to-Video)│ Wan2.1-14B / HunyuanVideo  │ 阿里通义万相 / 腾讯混元 │ AA Video / VBench│
+│ 语音识别 (ASR)          │ Whisper Large-v3 Turbo     │ OpenAI / 社区开源权重  │ Open ASR (HF)    │
+│ 语义向量与重排 (MTEB)   │ BGE-M3 / NV-Embed-v2       │ 智源 BAAI / NVIDIA     │ MTEB Leaderboard │
+└─────────────────────────┴────────────────────────────┴────────────────────────┴──────────────────┘
+```
 
 ---
 
-## 3. 2026 开源前沿架构的三大颠覆性演进
+## 2. 细分赛道权威排行榜与代表模型解析
 
-1. **从单纯 MLA 走向“分层 KV 压缩 + 稀疏注意力 (DSpark / Index Layers)”**：
-   - 面对 1M（百万级）甚至更长的超长文本，纯 KV Cache 仍然过大。DeepSeek-V4.1 引入了分层压缩率 (`compress_ratios`)、专用的索引查询层（Index Source Layers）与 DSpark 动态稀疏机制，使得 1M 上下文在常规显存上保持极高吞吐。
-2. **MoE 专家划分由粗转极细 (256~384 专家)**：
-   - 专家总数从早期的 8 个扩展至 384 个，单 Token 仅激活 6 个专家，使得单 Token 计算量维持在 8B~16B 极轻水平，而整体网络知识容量突破 500B~1.6T。
-3. **原生多模态结构替代外挂 Adapter**：
-   - Qwen3.8 与 DeepSeek-V4.1、Gemma-4 全面将视觉/音频 Token 纳入同一套 Transformer 统一流转，不再使用简单的 CLIP 投影头拼接，实现了跨模态真正的深度交错推理。
+### 2.1 通用 LLM 与长思维链推理 (General & Reasoning LLMs)
+* 权威评测源：**[AA Open Source Leaderboard](https://artificialanalysis.ai/models/open-source)**
+* 重点关注：综合智能质量评分 (Quality Index)、推理性价比、生成吞吐 (Tokens/s) 与上下文窗口
+
+| 排名梯队 | 模型名称 | 机构 | 架构形态 | 激活/总参数 | 关键优势与技术亮点 |
+|:---:|---|---|---|---|---|
+| 👑 **综合 SOTA** | **DeepSeek-V3** | DeepSeek | 细粒度 MoE | 37B / 671B | 质量跑分超越多款顶尖闭源模型；MLA 潜在注意力将 KV Cache 压缩为原先 1/5；无辅助 Loss 动态偏置路由 |
+| 🧠 **推理 SOTA** | **DeepSeek-R1** | DeepSeek | 细粒度 MoE | 37B / 671B | 纯大规模强化学习（RL）激发出自主纠错与长链反思能力，AIME 2024 与 MATH-500 超越 o1-preview |
+| 🐘 **稠密天花板**| **Llama 3.1 405B** | Meta AI | Dense | 405B / 405B | 全球最大纯开源稠密模型，世界级多语言知识储备与工业级小模型蒸馏教师 |
+| ⚡ **70B 主力** | **Qwen 2.5 72B-Inst** | 阿里 Qwen | Dense | 72B / 72B | 全面标配 QK-Norm 训练稳定架构，128k 极强文本与数学综合表现，企业私有化部署最稳基座 |
+
+---
+
+### 2.2 小型端侧轻量 LLM（≤4B）
+* 权威评测源：**[AA Tiny Models](https://artificialanalysis.ai/models/open-source/tiny)**
+* 重点关注：≤4B 极小体积下的逻辑密度、移动端/单卡运行效率 (RAM/VRAM < 6GB)
+
+| 排名梯队 | 模型名称 | 机构 | 参数量 | 上下文 | 关键优势与技术亮点 |
+|:---:|---|---|---|---|---|
+| 👑 **SOTA** | **Qwen 2.5 3B / 1.5B** | 阿里 Qwen | 3.09B / 1.54B | 32k/128k | 3B 尺寸具备超越老一代 13B 稠密模型的代码和逻辑能力，支持 GQA 与高压缩词表 |
+| 🥈 **Top Tier** | **Llama 3.2 3B / 1B** | Meta AI | 3.21B / 1.23B | 128k | Meta 专为移动端与本地轻量化优化的紧凑模型，配合剪枝与全量蒸馏策略 |
+| 🥉 **Top Tier** | **Gemma 2 2B** | Google DeepMind | 2.6B | 8k | 继承 27B 教师模型的蒸馏成果，带滑动窗口注意力与 Logit Soft-capping 约束 |
+
+---
+
+### 2.3 代码生成与动态编程 (Code Generation)
+* 权威评测源：**[LiveCodeBench Leaderboard](https://livecodebench.github.io/leaderboard.html)**
+* 重点关注：**动态无污染新题**执行正确率 (Pass@1, 严格防训练集泄露)
+
+| 排名梯队 | 模型名称 | 机构 | 参数量 | Pass@1 表现 | 架构亮点 |
+|:---:|---|---|---|---|---|
+| 👑 **开源 SOTA** | **Qwen 2.5 Coder 32B** | 阿里 Qwen | 32B Dense | **65%+** (超越 GPT-4o 早期基准) | 专为代码和算法精调，支持 128k 超大项目文件，32B 尺寸即可在常规 GPU 上达到顶级编程表现 |
+| 🥈 **Top Tier** | **DeepSeek-Coder-V2** | DeepSeek | 21B/236B MoE | **60%+** | 基于 DeepSeekMoE + MLA 架构，支持 338 种编程语言与 128k 上下文 |
+| 🥉 **轻量王者** | **Qwen 2.5 Coder 7B** | 阿里 Qwen | 7.6B Dense | **50%+** | 7B 小尺寸中编程性能最高，开发者日常 Copilot/本地 IDE 插件首选 |
+
+---
+
+### 2.4 软件工程智能体 (Software Engineering Agent)
+* 权威评测源：**[SWE-bench Official Leaderboard](https://www.swebench.com/)**
+* 重点关注：真实大型 GitHub 仓库 Issue 的自动化代码定位、修改并一次性通过所有单元测试的比例
+
+| 排名梯队 | 模型与 Agent 框架 | 机构 / 提交方 | 评测子集 | 解决率 (Resolved %) |
+|:---:|---|---|---|---|
+| 👑 **开源 SOTA** | **DeepSeek-R1 (with Agent Scaffolds)** | DeepSeek / 社区 | SWE-bench Verified | **49% ~ 55%** |
+| 🥈 **Top Tier** | **Qwen 2.5 Coder 32B (via Aider / OpenCode)** | 阿里 Qwen | SWE-bench Verified | **40% ~ 43%** |
+| 🥉 **Top Tier** | **Llama 3.1 405B (Agentic)** | Meta AI | SWE-bench Lite | **38% ~ 41%** |
+
+---
+
+### 2.5 多模态视觉语言大模型 (Vision-Language Models / VLM)
+* 权威评测源：**[Open VLM Leaderboard (Hugging Face)](https://huggingface.co/spaces/opencompass/open_vlm_leaderboard)**
+* 重点关注：图像多模态推理、复杂图表文档 OCR、原生分辨率缩放、细粒度目标定位 (Grounding)
+
+| 排名梯队 | 模型名称 | 机构 | 视觉编码与基座架构 | 核心特性 |
+|:---:|---|---|---|---|
+| 👑 **开源 SOTA** | **Qwen 2.5-VL-72B** | 阿里 Qwen | 动态分辨率 NaViT + Qwen2.5 语言基座 | 支持任意长宽比图像原生输入与视频动态切片，高精细 OCR、几何图表分析与长视频时序问答全面拔群 |
+| 🥈 **Top Tier** | **InternVL 2.5-78B** | OpenGVLab / 上海 AI 实验室 | 动态高分辨率视觉编码器 + InternLM2.5 基座 | 跨分辨率切片拼接机制，多模态综合学术榜单常年前三 |
+| 🥉 **端侧王座** | **MiniCPM-V 2.6 (8B)** | 面壁智能 (OpenBMB) | 端侧 8B 高效统一架构 | 8B 尺寸在 OCR、图表理解上越级战胜 70B 老模型，单张 3090/4090 或 iPad 端侧流畅运行 |
+| 🏅 **统一多模态** | **Janus-Pro-7B** | 深度求索 (DeepSeek) | 解耦视觉编码与生成解码器 | 既支持多模态图像理解，又支持文生图，架构统一度极高 |
+
+---
+
+### 2.6 视频理解与时序推理 (Video-LLM)
+* 权威评测源：**[OpenCompass Multi-modal Video Benchmarks](https://huggingface.co/opencompass)**
+* 重点关注：多帧长时序记忆、时序事件定位 (Temporal Localization)、动作因果关系推断
+
+| 排名梯队 | 模型名称 | 机构 | 架构机制 | 典型能力 |
+|:---:|---|---|---|---|
+| 👑 **SOTA** | **Qwen 2.5-VL (72B/7B)** | 阿里 Qwen | 3D-RoPE 时空动态位置编码 | 原生将视频帧视为连续三维数据流，支持数小时长视频精准时间戳检索 |
+| 🥈 **Top Tier** | **MiniCPM-V 2.6** | 面壁智能 | 密集帧采样与时序池化 (Temporal Pooling) | 8B 参数支持长视频流式理解与实时视频问答 |
+
+---
+
+### 2.7 文生图模型 (Text-to-Image Generation)
+* 权威评测源：**[AA Image Arena (Artificial Analysis)](https://artificialanalysis.ai/embed/text-to-image-leaderboard/leaderboard/text-to-image)**
+* 重点关注：人类偏好 Elo 对齐分、复杂长 Prompt 指令遵循度、文字排版渲染能力、写实真实度
+
+| 排名梯队 | 模型名称 | 机构 | 模型架构 | 参数规模 | 关键优势 |
+|:---:|---|---|---|---|---|
+| 👑 **开源绝对王座** | **FLUX.1 [dev]** | Black Forest Labs (原 SD 核心团队) | 12B 整流流匹配 (Rectified Flow DiT) | **12B** | 人类偏好盲测超越所有传统扩散模型；照片级真实皮肤纹理与光影；完美支持复杂英文字符排版 |
+| 🥈 **极致速度** | **FLUX.1 [schnell]** | Black Forest Labs | 步数蒸馏 DiT (1~4 步极速生成) | **12B** | Apache 2.0 协议，4 步即可生成商用级画质，单次生成延迟低于 1 秒 |
+| 🥉 **传统架构旗舰** | **SD 3.5 Large (8B)** | Stability AI | MMDiT (Multimodal Diffusion Transformer) | **8B** | 改进的解耦文本与图像双流注意力，艺术风格多样性好 |
+
+---
+
+### 2.8 视频生成模型 (Text-to-Video & Image-to-Video)
+* 权威评测源：**[AA Video Arena](https://artificialanalysis.ai/embed/text-to-video-leaderboard/leaderboard/text-to-video)** / **[VBench Leaderboard](https://huggingface.co/spaces/Vchitect/VBench_Leaderboard)**
+* 重点关注：物理规律仿真度 (Fluid/Gravity)、前后帧时序一致性 (Temporal Consistency)、镜头运动幅度与画质
+
+| 排名梯队 | 模型名称 | 机构 | 核心架构 | 参数规模 | 关键优势 |
+|:---:|---|---|---|---|---|
+| 👑 **最新开源双雄** | **Wan2.1 (通义万相)** | 阿里巴巴 (Wan-AI) | 3D 因果 VAE + Flow-Matching DiT | **14B / 1.3B** | 2025-2026 年度开源视频生成标杆；14B 物理真实感与运镜逼近 Sora 级表现；1.3B 亲民小模型支持消费级显卡极速生成 |
+| 👑 **电影级画质 SOTA**| **HunyuanVideo** | 腾讯混元 (Tencent) | 双流与单流融合 DiT (Dual-stream to Single-stream) | **13B** | 全球首个完全开源的顶级影视级 DiT 视频生成架构；超大 3D 因果卷积压缩比，支持原生 720p/1080p |
+| 🥉 **高性价比先驱** | **CogVideoX-5B** | 智谱 AI / 清华大学 | 3D-VAE + 专家 Transformer | **5B** | 开创开源视频 DiT 先河，社区生态适配极其完备 (ComfyUI / Diffusers) |
+
+---
+
+### 2.9 语音识别与音频理解 (Automatic Speech Recognition - ASR)
+* 权威评测源：**[Open ASR Leaderboard (Hugging Face)](https://huggingface.co/spaces/hf-audio/open_asr_leaderboard)**
+* 重点关注：词错误率 (WER)、多语种通用泛化、环境噪音抗干扰与实时推断因子 (RTF)
+
+| 排名梯队 | 模型名称 | 机构 | 架构特性 | 核心表现 |
+|:---:|---|---|---|---|
+| 👑 **工业界事实标准** | **Whisper Large-v3 Turbo** | OpenAI (开源权重) | 剪枝加速 Transformer Encoder-Decoder | 参数缩减至原版近一半（809M），推理速度提升 4~8 倍，保持极佳的多语言通用 WER |
+| 🥈 **多模态语音王者** | **SenseVoice-Small** | 阿里开源 (FunAudioLLM) | 非自回归流式语音模型 | 音频推理速度极快（延迟数十毫秒），并具备丰富的情绪检测 (Emotion) 与声音事件检测能力 |
+| 🥉 **多语种极低 WER** | **Canary-1B** | NVIDIA NeMo | 混合 Conformer-Transducer 架构 | 英语与多欧洲主流语言 WER 处于顶尖水平 |
+
+---
+
+### 2.10 向量表示与语义重排 (Embedding & Reranker)
+* 权威评测源：**[MTEB (Massive Text Embedding Benchmark)](https://leaderboard.mteb.org/)**
+* 重点关注：海量多任务检索 (Retrieval)、分类、聚类、重排得分，向量维度与显存开销
+
+| 排名梯队 | 模型名称 | 机构 | 类型 | 核心指标与亮点 |
+|:---:|---|---|---|---|
+| 👑 **通用检索王者** | **BGE-M3** | 智源研究院 (BAAI) | 统一多功能 Embedding | 单模型支持密集向量 (Dense)、稀疏词袋 (Lexical Sparse)、多向量交互 (Multi-vector ColBERT) 三合一，原生 8192 上下文与 100+ 语言 |
+| 👑 **MTEB 绝对高分** | **NV-Embed-v2** | NVIDIA | 大语言模型级 Embedding | 基于 Mistral/LLaMA 基座微调，MTEB 全球榜单综合前二，高精度企业级知识库召回首选 |
+| 🥈 **重排 SOTA** | **bge-reranker-large / v2-m3** | 智源研究院 (BAAI) | 交叉注意力 (Cross-Encoder) Reranker | 配合 BGE-M3 两阶段召回，Top-K 精排序准度极高 |
+| 🥉 **百亿长文本向量**| **gte-Qwen2-7B-instruct** | 阿里巴巴 | LLM-based Embedding | 支持 32k 超长文档单次向量化，检索深度语义匹配出众 |
+
+---
+
+## 3. 全模态开源模型选型总结指南
+
+```
+【文本逻辑与工程】
+  ├── 极致智商 / 复杂推理 / 论文推导 ──► DeepSeek-R1 (671B MoE)
+  ├── 综合业务对话 / 企业通用底座    ──► Qwen 2.5 72B / Llama 3.3 70B
+  ├── 真实项目代码修复 / Copilot     ──► Qwen 2.5 Coder 32B / 7B
+  └── 端侧设备 / 树莓派 / 本地轻量    ──► Qwen 2.5 3B / Llama 3.2 3B
+
+【多模态感知 (视觉 / 视频 / 语音)】
+  ├── 图像高精 OCR / 几何推理 / 视频QA──► Qwen 2.5-VL 72B / MiniCPM-V 2.6 (8B)
+  └── 语音转写 / 音视频会议纪要      ──► Whisper Large-v3 Turbo / SenseVoice
+
+【多模态创作生成】
+  ├── 商业级写实文生图 / 字符海报    ──► FLUX.1 [dev] / FLUX.1 [schnell]
+  └── 电影级长镜头运镜 / 物理仿真视频──► Wan2.1-14B (通义万相) / HunyuanVideo
+
+【知识库与 RAG 检索】
+  ├── 检索阶段 (Bi-Encoder)          ──► BGE-M3 / NV-Embed-v2
+  └── 精排阶段 (Cross-Encoder)       ──► BGE-Reranker-large
+```

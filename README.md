@@ -89,19 +89,19 @@ llm-architectures/
 
 ---
 
-## 3. 开源前沿 SOTA 梯队导航 (2026 前沿基准)
+## 3. 开源前沿 SOTA 梯队导航 (全模态权威基准)
 
-本仓库持续跟踪全球前沿权威基准（Hugging Face 排行榜、LMSYS Blind Test、Terminal-Bench 2.1/3.0/4.0 代码基准、DeepSWE v1.1、MathArena Apex 等）上处于第一梯队的最新开源旗舰模型：
+本仓库持续跟踪全球权威基准（涵盖文本推理、端侧轻量、代码工程、多模态视觉、视频理解、文生图、文生视频、ASR 语音以及向量检索 MTEB）上处于第一梯队的最新开源旗舰模型：
 
-- 👑 **全球开源综合王座**：[`DeepSeek-V4.1-Flash`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（384 细粒度 MoE + 1M 上下文 + 连续可控思考 1~100，Codeforces 3471，DeepSWE 解决率 74.2% 超越顶尖闭源模型）
-- 🏆 **万亿超大旗舰基座**：[`DeepSeek-V4-Pro (1.6T)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（1.6 万亿参数超大开源基座，384 选 6 路由专家，世界级知识容量）
-- 🚀 **开源社区最火 Dense 霸主**：[`Qwen 3.8-27B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（HF 1.7万+ Likes / 670万+ 下载，原生多模态 + 思考控制，SWE-bench Pro 61.7，单卡部署利器）
-- ⚡ **超高吞吐 MoE 标杆**：[`Qwen 3.6-35B-A3B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（仅激活 3B 参数，极速首字与推理吞吐，Agent 高频编排首选）
-- 🧠 **数学/RL 深度逻辑基石**：[`DeepSeek-R1-0528`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（强化学习长思维链迭代版，慢思考推理范式）
-- 🐘 **巨型工业级 MoE**：[`Mistral Large 3-675B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（675B 欧洲旗舰，原生 NVFP4 量化，顶尖多语言与 Function Calling）
-- 💎 **端侧/多模态极致性能**：[`Gemma-4-31B-it`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（Google 原生音视文一体多模态，60 层深度 + 滑动窗口）
+- 👑 **通用 LLM / 推理 SOTA**：[`DeepSeek-V3`](./deepseek/deepseek_v3/v3/README.md) & [`DeepSeek-R1`](./deepseek/deepseek_r1/r1/)（细粒度 MoE + MLA 压缩 + 纯大规模 RL 长思维链）
+- 🚀 **代码与工程 Agent SOTA**：[`Qwen 2.5 Coder 32B`](./alibaba/qwen/qwen2_5/)（LiveCodeBench 65%+，SWE-bench 顶尖开源解决率）
+- 👁️ **多模态视觉 (VLM) SOTA**：[`Qwen 2.5-VL 72B`](./alibaba/qwen/qwen2_5/) & [`MiniCPM-V 2.6`](./common/attention/)（动态 NaViT 分辨率 + 3D-RoPE 时空建模，高精细 OCR 与长视频理解）
+- 🎨 **文生图 (Text-to-Image) SOTA**：[`FLUX.1 [dev]`](https://github.com/black-forest-labs/flux)（12B Rectified Flow DiT，人类盲测 Elo 遥遥领先，照片级光影与完美字符排版）
+- 🎬 **视频生成 (Video Generation) SOTA**：[`Wan 2.1 (通义万相)`](https://github.com/Wan-Video/Wan2.1) & [`HunyuanVideo (混元)`](https://github.com/Tencent/HunyuanVideo)（3D 因果 VAE + Flow-Matching DiT 电影级物理仿真）
+- 🎙️ **语音识别 (ASR) SOTA**：[`Whisper Large-v3 Turbo`](https://github.com/openai/whisper) & [`SenseVoice`](https://github.com/FunAudioLLM/SenseVoice)（极低 WER + 毫秒级低延迟与情绪检测）
+- 🔍 **语义向量与重排 (Embedding / MTEB)**：[`BGE-M3`](https://github.com/FlagOpen/FlagEmbedding) & [`NV-Embed-v2`](https://huggingface.co/nvidia/NV-Embed-v2)（密集+稀疏+多向量三合一与超长上下文知识库检索）
 
-完整最新 2026 前沿天梯榜与架构对比评测，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
+完整多模态 11 大赛道天梯榜、权威站点探活与架构选型指南，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
 
 ---
 
