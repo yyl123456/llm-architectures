@@ -35,8 +35,10 @@ llm-architectures/
 │   ├── norm/                           # RMSNorm, LayerNorm, DeepNorm
 │   ├── ffn_moe/                        # SwiGLU, DeepSeekMoE, Mixtral MoE
 │   └── quantization/                   # FP8, AWQ, GPTQ 概念与结构适配
+├── .agents/skills/                     # 项目自动化与情报追踪技能体系
+│   └── model-intelligence-crawler/     # 全模态权威排行榜追踪、站点探活与自我演进 Skill
 └── docs/                               # 论文精读、演进矩阵与横向对比
-    ├── comparisons/                    # 架构横向对比分析
+    ├── comparisons/                    # 架构横向对比分析与最新 SOTA 榜单
     └── templates/                      # 架构卡片标准模版与编写指南
 ```
 

@@ -1,0 +1,128 @@
+{
+  "version": "1.0.0",
+  "updated_at": "2026-10-09",
+  "criteria": {
+    "inclusion": [
+      "具备社区高公信力、透明的评测基准机制 (如开源代码执行、人类盲测或独立评测机制)",
+      "评测数据或榜单保持持续迭代维护 (近6个月内有数据更新)",
+      "站点与 API 访问稳定，无永久 404/DNS 无法解析问题"
+    ],
+    "deprecation": [
+      "连续多次探测 HTTP 状态异常 (404/410/5xx) 或域名停运",
+      "超过 12 个月不再纳入新发布模型或停止更新",
+      "被社区广泛证实存在严重刷榜对齐污染且未做数据防泄漏过滤"
+    ]
+  },
+  "sources": [
+    {
+      "id": "aa_open_source",
+      "category": "通用 LLM / 推理模型",
+      "name": "AA Open Source",
+      "focus": "综合能力、质量评分、推理吞吐与参数规模、商业许可开放程度",
+      "url": "https://artificialanalysis.ai/models/open-source",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "综合能力与性能测试 (质量评分、延迟吞吐、成本)"
+    },
+    {
+      "id": "aa_tiny_models",
+      "category": "小型 LLM（≤4B）",
+      "name": "AA Tiny Models",
+      "focus": "≤4B 轻量端侧模型性能、参数效率与边缘部署指标",
+      "url": "https://artificialanalysis.ai/models/open-source/tiny",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "端侧轻量小模型专项评测"
+    },
+    {
+      "id": "livecodebench",
+      "category": "代码生成与编程",
+      "name": "LiveCodeBench",
+      "focus": "防污染真实代码题执行正确率 (Pass@1, 动态对抗LeetCode/Codeforces新题)",
+      "url": "https://livecodebench.github.io/leaderboard.html",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "无污染代码动态执行测评"
+    },
+    {
+      "id": "swe_bench",
+      "category": "软件工程 Agent",
+      "name": "SWE-bench",
+      "focus": "解决真实 GitHub Issue 缺陷修复率 (SWE-bench Verified / Lite / Pro)",
+      "url": "https://www.swebench.com/",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "代码智能体端到端工程修复"
+    },
+    {
+      "id": "open_vlm_leaderboard",
+      "category": "多模态 / VLM",
+      "name": "Open VLM Leaderboard",
+      "focus": "视觉语言模型评测、图文交错理解、高分辨率 OCR、视觉逻辑推理",
+      "url": "https://huggingface.co/spaces/opencompass/open_vlm_leaderboard",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "多模态跨维度学术与通用基准评测"
+    },
+    {
+      "id": "opencompass_video",
+      "category": "视频理解模型",
+      "name": "OpenCompass",
+      "focus": "视频问答 (Video-QA)、多帧时序逻辑理解、长视频长程记忆",
+      "url": "https://huggingface.co/opencompass",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "开源多模态/视频理解系列基准"
+    },
+    {
+      "id": "aa_image_arena",
+      "category": "图像生成 (Text-to-Image)",
+      "name": "AA Image Arena",
+      "focus": "文生图模型生成质量、人类偏好 Elo 对齐评级、美学与构图指令遵循",
+      "url": "https://artificialanalysis.ai/embed/text-to-image-leaderboard/leaderboard/text-to-image",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "文生图盲测竞技场 (Elo Rating)"
+    },
+    {
+      "id": "aa_video_arena",
+      "category": "视频生成 (Text-to-Video)",
+      "name": "AA Video Arena",
+      "focus": "文生视频、图生视频生成真实度、人类偏好与物理规律遵循度",
+      "url": "https://artificialanalysis.ai/embed/text-to-video-leaderboard/leaderboard/text-to-video",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "视频生成盲测竞技场"
+    },
+    {
+      "id": "vbench_leaderboard",
+      "category": "视频生成客观指标",
+      "name": "VBench",
+      "focus": "视频时序一致性、动态运动质量、主体忠实度等多维度客观度量",
+      "url": "https://huggingface.co/spaces/Vchitect/VBench_Leaderboard",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "十六维度视频生成质量与控制客观评测"
+    },
+    {
+      "id": "open_asr_leaderboard",
+      "category": "语音识别 ASR",
+      "name": "Open ASR",
+      "focus": "词错误率 (WER)、多语种泛化能力、跨域音频鲁棒性",
+      "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "自动化语音转写准确率与基准打分"
+    },
+    {
+      "id": "mteb_leaderboard",
+      "category": "Embedding / Reranker",
+      "name": "MTEB",
+      "focus": "海量文本向量化检索 (Retrieval)、语义重排 (Reranking)、聚类与模型尺寸权衡",
+      "url": "https://leaderboard.mteb.org/",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "海量文本向量化多任务学术与检索基准"
+    }
+  ]
+}
