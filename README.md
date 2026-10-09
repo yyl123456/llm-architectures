@@ -35,29 +35,42 @@ llm-architectures/
 │       ├── llama3_1/                       # LLaMA-3.1: 128k 长上下文, RoPE Base=500k, 405B 旗舰
 │       └── llama3_2/                       # LLaMA-3.2: 1B/3B 紧凑模型与 Vision 架构
 ├── deepseek/                               # 深度求索 (DeepSeek)
+│   ├── deepseek_v4/                        # 2026 前沿旗舰 MoE 系列 (>= 2026-05)
+│   │   ├── v4_1_flash/                     # V4.1 Flash (2026-09, 384细粒度MoE + 1M窗口, Codeforces 3471)
+│   │   ├── v4_pro/                         # V4 Pro 0813 (2026-08, 1.6T 万亿MoE旗舰)
+│   │   ├── v4_flash_dspark/                # V4 Flash DSpark (2026-07, 动态稀疏推理与马尔可夫排序)
+│   │   └── v4_flash_vision/                # V4 Flash Vision (2026-08, 原生多模态统一流)
 │   ├── deepseek_llm/                       # DeepSeek-LLM 稠密基础系列
 │   ├── deepseek_moe/                       # DeepSeek-MoE: 细粒度专家与共享专家首发
 │   ├── deepseek_v2/                        # DeepSeek-V2 / Lite: MLA (KV Cache 极度压缩)
 │   ├── deepseek_v3/                        # DeepSeek-V3: 671B 极致 MoE + MLA + 无辅助 Loss
 │   └── deepseek_r1/                        # DeepSeek-R1: 强化学习推理架构与长思维链
-├── alibaba/                                # 阿里巴巴 (Alibaba Cloud)
+├── alibaba/                                # 阿里巴巴 (Alibaba Cloud / 通义实验室)
+│   ├── wan/                                # Wan (通义万相) 视频生成系列
+│   │   ├── wan3_0/                         # Wan 3.0 (2026-09, 原生音视频一体化生成, 30秒连续)
+│   │   └── wan2_2/                         # Wan 2.2 Animate 系列 (人物高保真动态生成)
 │   └── qwen/                               # 通义千问 (Qwen) 系列
-│       ├── qwen1/                          # Qwen-1: Untied Embedding + NTK 感知插值
-│       ├── qwen1_5/                        # Qwen-1.5: 架构标准化与广泛尺寸支持
-│       ├── qwen2/                          # Qwen-2: 全尺寸 GQA + Tie-Word-Embeddings 优化
+│       ├── qwen3_8/                        # Qwen 3.8-27B (2026-08, 64层原生多模态, SWE 61.7%)
+│       ├── qwen3_8_flash/                  # Qwen 3.8-Flash-Next (2026-08, 512细粒度专家, 极速响应)
+│       ├── qwen3_8_moe/                    # Qwen 3.8-2.4T-A95B (2026-08, 2.4万亿超大MoE基座)
+│       ├── qwen3_asr/                      # Qwen3-ASR 1.7B / ForcedAligner (2026-06, RTFx 835.6)
+│       ├── qwen_image/                     # Qwen-Image-2.1 (2026-09, 流匹配 DiT 汉字排版)
+│       ├── qwen1/ & qwen1_5/ & qwen2/      # 早期代际归档
 │       ├── qwen2_5/                        # Qwen-2.5: QK-Norm 训练稳定化 + 128k 强大基座
 │       └── qwq/                            # QwQ: 强化学习长思维链推理模型
 ├── mistralai/                              # Mistral AI
-│   ├── mistral/                            # Mistral Dense 系列
-│   │   ├── mistral_7b/                     # Mistral-7B: Sliding Window Attention (SWA)
-│   │   └── mistral_large/                  # Mistral-Large: 工业级通用大模型
-│   └── mixtral/                            # Mixtral 稀疏 MoE 系列
-│       ├── mixtral_8x7b/                   # Mixtral 8x7B: Top-2 Router 稀疏专家
-│       └── mixtral_8x22b/                  # Mixtral 8x22B: 大规模 MoE
-├── google/                                 # Google
-│   └── gemma/                              # Gemma 系列
-│       ├── gemma1/                         # Gemma-1: GeGLU + RoPE + RMSNorm
-│       └── gemma2/                         # Gemma-2: 交替 SWA/全注意力 + Logit Soft-capping + 双重 Norm
+│   ├── leanstral/leanstral_1_5/            # Leanstral 1.5 119B-A6B (2026-07, 紧凑 MoE)
+│   ├── shieldstral/shieldstral_1/          # Shieldstral 1.0 3B (2026-07, 安全对齐防御模型)
+│   ├── mistral/                            # Mistral Dense 系列 (mistral_7b, mistral_large)
+│   └── mixtral/                            # Mixtral 稀疏 MoE 系列 (mixtral_8x7b, 8x22b)
+├── google/                                 # Google DeepMind
+│   ├── gemma/gemma4/                       # Gemma 4 12B/31B (2026-06, 原生音视频文字一体多模态)
+│   ├── diffusiongemma/diffusiongemma_26b/  # DiffusionGemma 26B-A4B (2026-06, 首个 MoE 扩散模型)
+│   ├── embeddinggemma/embeddinggemma_2/    # EmbeddingGemma-2 (2026-09, 最新长文本向量化)
+│   └── gemma/gemma1/ & gemma2/             # 历史代际归档
+├── black_forest_labs/                      # Black Forest Labs (BFL)
+│   └── flux_3/                             # FLUX.3 系列
+│       └── flux_3_action/                  # FLUX-3-Action (2026-09, 具身智能动作生成 DiT)
 ├── microsoft/                              # 微软 (Microsoft)
 │   └── phi/                                # Phi 系列 (小钢炮轻量模型)
 │       ├── phi1/                           # Phi-1 / 1.5: 教科书级高质量数据小模型
