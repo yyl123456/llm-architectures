@@ -83,13 +83,27 @@ llm-architectures/
 │   ├── ffn_moe/                            # SwiGLU, TopK MoE, DeepSeekMoE
 │   └── quantization/                       # FP8, AWQ, GPTQ 核心原理
 └── docs/                                   # 理论研究与横向对比
-    ├── comparisons/                        # 跨模型横向对比矩阵与论文演进
+    ├── comparisons/                        # 跨模型横向对比矩阵、SOTA 排行榜分析
     └── templates/                          # 统一模型卡片模版
 ```
 
 ---
 
-## 3. 核心大模型架构横向对比速查表
+## 3. 开源前沿 SOTA 梯队导航
+
+本仓库持续跟踪全球前沿权威基准（LMSYS Chatbot Arena, Open LLM Leaderboard, LiveCodeBench, MATH-500 等）上表现最强劲的开源模型：
+
+- 🏆 **全能综合榜首**：[`DeepSeek-V3`](./deepseek/deepseek_v3/v3/README.md)（671B 细粒度 MoE + MLA 潜在注意力架构，开源综合性能与推理性价比巅峰）
+- 🧠 **推理与长思维链王座**：[`DeepSeek-R1`](./deepseek/deepseek_r1/r1/) & [`QwQ-32B`](./alibaba/qwen/qwq/)（大尺度强化学习驱动，数学/竞赛级代码超越 o1）
+- 🐘 **纯开源稠密最大基座**：[`Llama 3.1 405B`](./meta/llama/llama3_1/)（全球最大开源 Dense 架构，世界级多语言知识储备与蒸馏母体）
+- ⚡ **实用全能主力 (70B-72B)**：[`Qwen 2.5 72B`](./alibaba/qwen/qwen2_5/README.md) & [`Llama 3.3 70B`](./meta/llama/llama3/)（代码、数学、长上下文各场景中坚力量）
+- 🚀 **高效端侧小钢炮 (<15B)**：[`Phi-4 14B`](./microsoft/phi/phi4/) & [`Gemma-2 9B/27B`](./google/gemma/gemma2/README.md)（单位参数智力密度极致之作）
+
+完整天梯榜与架构对比评测，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
+
+---
+
+## 4. 核心大模型架构横向对比速查表
 
 | 模型架构 | 开发者 | 注意力机制 | 位置编码 (PE) | 归一化 (Norm) | 激活函数 | 专家机制 (MoE) | 上下文长度 |
 |---|---|---|---|---|---|---|---|
