@@ -89,17 +89,19 @@ llm-architectures/
 
 ---
 
-## 3. 开源前沿 SOTA 梯队导航
+## 3. 开源前沿 SOTA 梯队导航 (2026 前沿基准)
 
-本仓库持续跟踪全球前沿权威基准（LMSYS Chatbot Arena, Open LLM Leaderboard, LiveCodeBench, MATH-500 等）上表现最强劲的开源模型：
+本仓库持续跟踪全球前沿权威基准（Hugging Face 排行榜、LMSYS Blind Test、Terminal-Bench 2.1/3.0/4.0 代码基准、DeepSWE v1.1、MathArena Apex 等）上处于第一梯队的最新开源旗舰模型：
 
-- 🏆 **全能综合榜首**：[`DeepSeek-V3`](./deepseek/deepseek_v3/v3/README.md)（671B 细粒度 MoE + MLA 潜在注意力架构，开源综合性能与推理性价比巅峰）
-- 🧠 **推理与长思维链王座**：[`DeepSeek-R1`](./deepseek/deepseek_r1/r1/) & [`QwQ-32B`](./alibaba/qwen/qwq/)（大尺度强化学习驱动，数学/竞赛级代码超越 o1）
-- 🐘 **纯开源稠密最大基座**：[`Llama 3.1 405B`](./meta/llama/llama3_1/)（全球最大开源 Dense 架构，世界级多语言知识储备与蒸馏母体）
-- ⚡ **实用全能主力 (70B-72B)**：[`Qwen 2.5 72B`](./alibaba/qwen/qwen2_5/README.md) & [`Llama 3.3 70B`](./meta/llama/llama3/)（代码、数学、长上下文各场景中坚力量）
-- 🚀 **高效端侧小钢炮 (<15B)**：[`Phi-4 14B`](./microsoft/phi/phi4/) & [`Gemma-2 9B/27B`](./google/gemma/gemma2/README.md)（单位参数智力密度极致之作）
+- 👑 **全球开源综合王座**：[`DeepSeek-V4.1-Flash`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（384 细粒度 MoE + 1M 上下文 + 连续可控思考 1~100，Codeforces 3471，DeepSWE 解决率 74.2% 超越顶尖闭源模型）
+- 🏆 **万亿超大旗舰基座**：[`DeepSeek-V4-Pro (1.6T)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（1.6 万亿参数超大开源基座，384 选 6 路由专家，世界级知识容量）
+- 🚀 **开源社区最火 Dense 霸主**：[`Qwen 3.8-27B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（HF 1.7万+ Likes / 670万+ 下载，原生多模态 + 思考控制，SWE-bench Pro 61.7，单卡部署利器）
+- ⚡ **超高吞吐 MoE 标杆**：[`Qwen 3.6-35B-A3B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（仅激活 3B 参数，极速首字与推理吞吐，Agent 高频编排首选）
+- 🧠 **数学/RL 深度逻辑基石**：[`DeepSeek-R1-0528`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（强化学习长思维链迭代版，慢思考推理范式）
+- 🐘 **巨型工业级 MoE**：[`Mistral Large 3-675B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（675B 欧洲旗舰，原生 NVFP4 量化，顶尖多语言与 Function Calling）
+- 💎 **端侧/多模态极致性能**：[`Gemma-4-31B-it`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（Google 原生音视文一体多模态，60 层深度 + 滑动窗口）
 
-完整天梯榜与架构对比评测，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
+完整最新 2026 前沿天梯榜与架构对比评测，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
 
 ---
 
