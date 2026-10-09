@@ -89,21 +89,20 @@ llm-architectures/
 
 ---
 
-## 3. 开源前沿 SOTA 梯队导航 (11 大赛道全模态直连实测)
+## 3. 开源前沿 SOTA 梯队导航 (2026-05 后前沿专属)
 
-本仓库持续直连全球 11 大权威评测基准（涵盖通用推理、端侧小模型、代码对抗、工程 Agent、多模态 VLM、视频理解、文生图、文生视频、ASR 语音以及向量检索 MTEB）底层数据，跟踪各领域最新开源顶流：
+本仓库严格执行**时效性硬性门禁（发布时间 Release Date ≥ 2026-05-01，早于此时间的旧代际模型一律 PASS 淘汰）**，直连 11 大赛道权威排行榜真实数据层：
 
-- 👑 **通用 LLM / 推理 SOTA**：[`MiMo-V2.6-Pro`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`GLM-5.3 (Max)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`DeepSeek-V4 Pro`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（AA Open Source 智能指数 44+~46+，细粒度 MoE + 大尺度 RL）
-- 🚀 **端侧极小钢炮 (≤4B)**：[`K2 Horizon 3.7B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`MiniCPM5-2B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Granite 4.2 3B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（AA Tiny Models 认证最高智能密度）
-- 💻 **代码动态对抗 SOTA**：[`DeepSeek-R1-0528`](./deepseek/deepseek_r1/r1/) (Pass@1 达 **84.4%**) / [`OpenReasoning-Nemotron-32B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (**81.0%**) / [`Qwen3-235B-A22B`](./alibaba/qwen/) (**80.4%**)（LiveCodeBench 真实全量评测均分）
-- 🛠️ **软件工程 Agent SOTA**：[`DeepSeek-R1 (Agentic)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (SWE-bench 49%~55%) / [`Qwen 3.8-27B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (SWE-bench Pro 61.7%)
-- 👁️ **多模态视觉 (VLM) SOTA**：[`InternVL-Chat-V1.5 (26B/78B)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Qwen2.5-VL 72B`](./alibaba/qwen/qwen2_5/)（OpenVLM 官方综合评分前列）
-- 🎨 **文生图 (Text-to-Image) SOTA**：[`FLUX.2 [dev]`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 1000.0) / [`HiDream-O1-Image`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 956.6) / [`FLUX.2 [klein] 9B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (AA Image Arena 开源榜首)
-- 🎬 **文生视频 (T2V) SOTA**：[`MiniMax H3 (768p)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 1153.3) / [`LTX-2.5 Pro`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 963.4)（AA Video Arena 物理连续性与真实度之星）
-- 🎙️ **语音识别 (ASR) SOTA**：[`Phi-4-multimodal-instruct`](./microsoft/phi/phi4/) (WER **5.02%**) / [`Granite-Speech-3.3`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (WER **5.26%**) / [`Qwen3-ASR-1.7B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (RTFx **835.6**)（Open ASR 官方数据直连）
-- 🔍 **语义检索与重排 (Embedding)**：[`UME-R1 (7B/2B)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`VultronRetriever-Qwen3.5`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`BGE-M3`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（MTEB 思考型与高维度检索最新演进）
+- 👑 **通用 LLM / 推理 SOTA**：[`MiMo-V2.6-Pro (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`GLM-5.3 Max (2026-08)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`DeepSeek-V4.1-Flash (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（AA Open Source 智能指数 44+~46+，384 细粒度 MoE + 1M 窗口）
+- 🚀 **端侧极小钢炮 (≤4B)**：[`K2 Horizon 3.7B (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`MiniCPM5-2B (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Granite 4.2 3B (2026-08)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（AA 官方认证 ≤4B 智能密度最高）
+- 💻 **代码与工程 Agent SOTA**：[`DeepSeek-V4.1-Flash (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Terminal-Bench 90.6%，DeepSWE 解决率 74.2%) / [`Qwen 3.8-27B (2026-08)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (SWE-bench Pro 61.7%)
+- 👁️ **多模态视觉 (VLM) SOTA**：[`DeepSeek-V4-Flash-Vision (2026-08)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Ling-3.0-flash-VL (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`MiniCPM-V 4.6 1.3B (2026-05)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)
+- 🎨 **文生图 (Text-to-Image) SOTA**：[`Qwen-Image-2.1 (2026-09)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`DiffusionGemma 26B (2026-06)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`HiDream-O1-Image (2026-06)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)
+- 🎬 **文生视频 (T2V) SOTA**：[`MiniMax H3 (2026-07)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (AA Video Arena 开源第 1，Elo 1137.4) / [`LTX-2.5 Pro (2026-08)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 945.9)
+- 🎙️ **语音识别 (ASR) SOTA**：[`granite-speech-5.0 (2026-10)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Qwen3-ASR-1.7B (2026-06)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (WER 5.75%，RTFx 吞吐高达 835.6)
+- 🔍 **语义检索 (Embedding) SOTA**：[`UME-R1 (2026-07)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`VultronRetriever-Qwen3.5 (2026-06)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (MTEB 思考型向量模型)
 
-完整 11 大赛道底层数据逆向解析报告，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
+完整 11 大赛道最新数据与穿透脚本，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
 
 ---
 
