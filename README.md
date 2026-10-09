@@ -76,12 +76,36 @@ llm-architectures/
 │   └── baichuan/                           # Baichuan 系列
 │       ├── baichuan1/                      # Baichuan-7B (RoPE) / 13B (ALiBi)
 │       └── baichuan2/                      # Baichuan2: 预训练稳定化优化 (NormHead)
+├── zhipu/                                  # 智谱 AI (Zhipu AI)
+│   └── glm/                                # GLM 系列
+│       └── glm5_3/                         # GLM-5.3 Max / Flash (2026-08, AA 智能指数 44.8)
+├── moonshot/                               # 月之暗面 (Moonshot AI)
+│   └── kimi/                               # Kimi 系列
+│       └── k3/                             # Kimi K3 Max (2026-07, AA 智能指数 43.6, 长思考链)
+├── openbmb/                                # 面壁智能 (OpenBMB)
+│   └── minicpm/                            # MiniCPM 系列 (端侧小钢炮)
+│       ├── minicpm5/                       # MiniCPM5-2B (2026-09, ≤4B 官方榜首, 端侧长思考)
+│       └── minicpm_v4_6/                   # MiniCPM-V 4.6 1.3B (2026-05, 1B极速端侧多模态)
+├── minimax/                                # MiniMax (稀宇科技)
+│   ├── minimax_m/m3/                       # MiniMax-M3 (2026-06, 通用大模型)
+│   └── minimax_video/h3/                   # MiniMax H3 (2026-07, AA Video Arena 开源榜首 1137.4 Elo)
+├── lightricks/                             # Lightricks
+│   └── ltx_video/ltx_2_5/                  # LTX-2.5 Pro / Fast (2026-08, 22B 超高帧率开源视频生成)
+├── ibm/                                    # IBM Research
+│   └── granite/                            # Granite 系列
+│       ├── granite_4_2/                    # Granite 4.2 3B (2026-08, ≤4B 企业级紧凑端侧)
+│       └── granite_speech_5/               # Granite-Speech-5.0 (2026-10, 工业高速抗噪 ASR)
+├── nvidia/                                 # NVIDIA
+│   └── nemotron/                           # Nemotron 系列
+│       └── nemotron_3_5/                   # Nemotron 3.5 Lightning (2026-08, Tensor Core 极致对齐)
 ├── common/                                 # 通用算子与算法组件库
 │   ├── attention/                          # MHA, MQA, GQA, MLA, Sliding Window
 │   ├── rope/                               # RoPE, YaRN, Linear/NTK Scaling
 │   ├── norm/                               # RMSNorm, LayerNorm, DeepNorm
 │   ├── ffn_moe/                            # SwiGLU, TopK MoE, DeepSeekMoE
 │   └── quantization/                       # FP8, AWQ, GPTQ 核心原理
+├── .agents/skills/                         # 项目自动化与情报追踪技能体系
+│   └── model-intelligence-crawler/         # 全模态权威排行榜追踪、抗渲染穿透与自更新 Skill
 └── docs/                                   # 理论研究与横向对比
     ├── comparisons/                        # 跨模型横向对比矩阵、SOTA 排行榜分析
     └── templates/                          # 统一模型卡片模版
