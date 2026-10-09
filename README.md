@@ -89,19 +89,21 @@ llm-architectures/
 
 ---
 
-## 3. 开源前沿 SOTA 梯队导航 (全模态权威基准)
+## 3. 开源前沿 SOTA 梯队导航 (11 大赛道全模态直连实测)
 
-本仓库持续跟踪全球权威基准（涵盖文本推理、端侧轻量、代码工程、多模态视觉、视频理解、文生图、文生视频、ASR 语音以及向量检索 MTEB）上处于第一梯队的最新开源旗舰模型：
+本仓库持续直连全球 11 大权威评测基准（涵盖通用推理、端侧小模型、代码对抗、工程 Agent、多模态 VLM、视频理解、文生图、文生视频、ASR 语音以及向量检索 MTEB）底层数据，跟踪各领域最新开源顶流：
 
-- 👑 **通用 LLM / 推理 SOTA**：[`DeepSeek-V3`](./deepseek/deepseek_v3/v3/README.md) & [`DeepSeek-R1`](./deepseek/deepseek_r1/r1/)（细粒度 MoE + MLA 压缩 + 纯大规模 RL 长思维链）
-- 🚀 **代码与工程 Agent SOTA**：[`Qwen 2.5 Coder 32B`](./alibaba/qwen/qwen2_5/)（LiveCodeBench 65%+，SWE-bench 顶尖开源解决率）
-- 👁️ **多模态视觉 (VLM) SOTA**：[`Qwen 2.5-VL 72B`](./alibaba/qwen/qwen2_5/) & [`MiniCPM-V 2.6`](./common/attention/)（动态 NaViT 分辨率 + 3D-RoPE 时空建模，高精细 OCR 与长视频理解）
-- 🎨 **文生图 (Text-to-Image) SOTA**：[`FLUX.1 [dev]`](https://github.com/black-forest-labs/flux)（12B Rectified Flow DiT，人类盲测 Elo 遥遥领先，照片级光影与完美字符排版）
-- 🎬 **视频生成 (Video Generation) SOTA**：[`Wan 2.1 (通义万相)`](https://github.com/Wan-Video/Wan2.1) & [`HunyuanVideo (混元)`](https://github.com/Tencent/HunyuanVideo)（3D 因果 VAE + Flow-Matching DiT 电影级物理仿真）
-- 🎙️ **语音识别 (ASR) SOTA**：[`Whisper Large-v3 Turbo`](https://github.com/openai/whisper) & [`SenseVoice`](https://github.com/FunAudioLLM/SenseVoice)（极低 WER + 毫秒级低延迟与情绪检测）
-- 🔍 **语义向量与重排 (Embedding / MTEB)**：[`BGE-M3`](https://github.com/FlagOpen/FlagEmbedding) & [`NV-Embed-v2`](https://huggingface.co/nvidia/NV-Embed-v2)（密集+稀疏+多向量三合一与超长上下文知识库检索）
+- 👑 **通用 LLM / 推理 SOTA**：[`MiMo-V2.6-Pro`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`GLM-5.3 (Max)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`DeepSeek-V4 Pro`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（AA Open Source 智能指数 44+~46+，细粒度 MoE + 大尺度 RL）
+- 🚀 **端侧极小钢炮 (≤4B)**：[`K2 Horizon 3.7B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`MiniCPM5-2B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Granite 4.2 3B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（AA Tiny Models 认证最高智能密度）
+- 💻 **代码动态对抗 SOTA**：[`DeepSeek-R1-0528`](./deepseek/deepseek_r1/r1/) (Pass@1 达 **84.4%**) / [`OpenReasoning-Nemotron-32B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (**81.0%**) / [`Qwen3-235B-A22B`](./alibaba/qwen/) (**80.4%**)（LiveCodeBench 真实全量评测均分）
+- 🛠️ **软件工程 Agent SOTA**：[`DeepSeek-R1 (Agentic)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (SWE-bench 49%~55%) / [`Qwen 3.8-27B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (SWE-bench Pro 61.7%)
+- 👁️ **多模态视觉 (VLM) SOTA**：[`InternVL-Chat-V1.5 (26B/78B)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`Qwen2.5-VL 72B`](./alibaba/qwen/qwen2_5/)（OpenVLM 官方综合评分前列）
+- 🎨 **文生图 (Text-to-Image) SOTA**：[`FLUX.2 [dev]`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 1000.0) / [`HiDream-O1-Image`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 956.6) / [`FLUX.2 [klein] 9B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (AA Image Arena 开源榜首)
+- 🎬 **文生视频 (T2V) SOTA**：[`MiniMax H3 (768p)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 1153.3) / [`LTX-2.5 Pro`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (Elo 963.4)（AA Video Arena 物理连续性与真实度之星）
+- 🎙️ **语音识别 (ASR) SOTA**：[`Phi-4-multimodal-instruct`](./microsoft/phi/phi4/) (WER **5.02%**) / [`Granite-Speech-3.3`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (WER **5.26%**) / [`Qwen3-ASR-1.7B`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) (RTFx **835.6**)（Open ASR 官方数据直连）
+- 🔍 **语义检索与重排 (Embedding)**：[`UME-R1 (7B/2B)`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`VultronRetriever-Qwen3.5`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md) / [`BGE-M3`](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)（MTEB 思考型与高维度检索最新演进）
 
-完整多模态 11 大赛道天梯榜、权威站点探活与架构选型指南，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
+完整 11 大赛道底层数据逆向解析报告，详见 📑 [docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md](./docs/comparisons/SOTA_OPEN_LLM_LEADERBOARD.md)。
 
 ---
 
