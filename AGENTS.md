@@ -82,8 +82,9 @@ llm-architectures/
 1. **查证官方资料与权威来源**：优先查阅官方技术报告（arXiv）、官方 GitHub 官方仓库开源建模代码（或 HuggingFace `transformers/src/transformers/models/...` 中的官方提交）。严禁主观凭空臆测超参数与模块连接。
 2. **检查与遵循目录规范**：在 `vendor/series/version/` 确切路径下作业。如果属于通用算法，应下沉或引用 `common/` 模块。
 3. **测试自洽性**：编写的 `modeling.py` 必须能够独立运行并输出预期的 Tensor Shape，无未捕获异常。
-4. **更新全局索引与死链检查**：
-   - 完成新模型添加后，同步更新根目录 `README.md` 的模型演进矩阵与导航索引；
+4. **更新全局索引、模型导航与死链检查**：
+   - 完成新模型添加后，同步更新根目录 `README.md` 的模型演进矩阵；
+   - **必须同步更新 `models/README.md`（模型总导航卡片）**，在对应的前沿模型表格或经典基石表格中追加一行，并提供精准的相对路径链接；
    - **提交前必须运行 `python3 scripts/verify_index.py`**，确保无死链、相对路径有效方可 Commit。
 5. **Git 规范**：
    - 提交信息遵循 Conventional Commits 规范，例如：
