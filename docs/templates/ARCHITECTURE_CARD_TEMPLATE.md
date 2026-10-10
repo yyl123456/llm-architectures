@@ -1,6 +1,6 @@
 # 架构卡片标准模板 (Model Architecture Card Template)
 
-> 目录路径示范: `meta/llama/llama3/README.md` 或 `deepseek/deepseek_v3/v3/README.md`
+> 目录路径示范: `models/meta/llama/llama3/README.md` 或 `models/deepseek/deepseek_v3/v3/README.md`
 
 ---
 

@@ -123,6 +123,6 @@
 ## 3. 自动化技术沉淀与防退化说明
 
 本次排查中建立并沉淀的核心机制已永久固化入本项目：
-1. **抗动态渲染专用提取脚本**：[`.agents/skills/model-intelligence-crawler/scripts/fetch_latest_sota.py`](.agents/skills/model-intelligence-crawler/scripts/fetch_latest_sota.py)，内嵌 Next.js App Router 逆向与 Jina Reader 双重通道，禁止任何无依据瞎猜。
+1. **抗动态渲染专用提取脚本**：[`../../.agents/skills/model-intelligence-crawler/scripts/fetch_latest_sota.py`](../../.agents/skills/model-intelligence-crawler/scripts/fetch_latest_sota.py)，内嵌 Next.js App Router 逆向与 Jina Reader 双重通道，禁止任何无依据瞎猜。
 2. **硬性时间门禁**：内置 `CUTOFF_DATE = "2026-05-01"`，自动将早于该时间的过时模型标记剔除。
-3. **权威榜单规范**：同步更新至 [`.agents/skills/model-intelligence-crawler/SKILL.md`](.agents/skills/model-intelligence-crawler/SKILL.md) 与 [`AGENTS.md`](AGENTS.md)。
+3. **权威榜单规范**：同步更新至 [`../../.agents/skills/model-intelligence-crawler/SKILL.md`](../../.agents/skills/model-intelligence-crawler/SKILL.md) 与 [`../../AGENTS.md`](../../AGENTS.md)。

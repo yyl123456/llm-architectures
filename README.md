@@ -23,100 +23,75 @@
 ## 2. 目录体系：开源公司 / 系列 / 版本
 
 项目遵循统一严格的目录组织规范：
-`[开源机构或公司] / [模型系列] / [系列版本] /`
+`models / [开源机构或公司] / [模型系列] / [系列版本] /`
 
 ```text
 llm-architectures/
-├── meta/                                   # Meta (Facebook)
-│   └── llama/                              # LLaMA 系列
-│       ├── llama1/                         # LLaMA-1: RMSNorm + SwiGLU + RoPE 基石
-│       ├── llama2/                         # LLaMA-2: 引入 34B/70B GQA
-│       ├── llama3/                         # LLaMA-3: 8B 全面采用 GQA, 128k 词表
-│       ├── llama3_1/                       # LLaMA-3.1: 128k 长上下文, RoPE Base=500k, 405B 旗舰
-│       └── llama3_2/                       # LLaMA-3.2: 1B/3B 紧凑模型与 Vision 架构
-├── deepseek/                               # 深度求索 (DeepSeek)
-│   ├── deepseek_v4/                        # 2026 前沿旗舰 MoE 系列 (>= 2026-05)
-│   │   ├── v4_1_flash/                     # V4.1 Flash (2026-09, 384细粒度MoE + 1M窗口, Codeforces 3471)
-│   │   ├── v4_pro/                         # V4 Pro 0813 (2026-08, 1.6T 万亿MoE旗舰)
-│   │   ├── v4_flash_dspark/                # V4 Flash DSpark (2026-07, 动态稀疏推理与马尔可夫排序)
-│   │   └── v4_flash_vision/                # V4 Flash Vision (2026-08, 原生多模态统一流)
-│   ├── deepseek_llm/                       # DeepSeek-LLM 稠密基础系列
-│   ├── deepseek_moe/                       # DeepSeek-MoE: 细粒度专家与共享专家首发
-│   ├── deepseek_v2/                        # DeepSeek-V2 / Lite: MLA (KV Cache 极度压缩)
-│   ├── deepseek_v3/                        # DeepSeek-V3: 671B 极致 MoE + MLA + 无辅助 Loss
-│   └── deepseek_r1/                        # DeepSeek-R1: 强化学习推理架构与长思维链
-├── alibaba/                                # 阿里巴巴 (Alibaba Cloud / 通义实验室)
-│   ├── wan/                                # Wan (通义万相) 视频生成系列
-│   │   ├── wan3_0/                         # Wan 3.0 (2026-09, 原生音视频一体化生成, 30秒连续)
-│   │   └── wan2_2/                         # Wan 2.2 Animate 系列 (人物高保真动态生成)
-│   └── qwen/                               # 通义千问 (Qwen) 系列
-│       ├── qwen3_8/                        # Qwen 3.8-27B (2026-08, 64层原生多模态, SWE 61.7%)
-│       ├── qwen3_8_flash/                  # Qwen 3.8-Flash-Next (2026-08, 512细粒度专家, 极速响应)
-│       ├── qwen3_8_moe/                    # Qwen 3.8-2.4T-A95B (2026-08, 2.4万亿超大MoE基座)
-│       ├── qwen3_asr/                      # Qwen3-ASR 1.7B / ForcedAligner (2026-06, RTFx 835.6)
-│       ├── qwen_image/                     # Qwen-Image-2.1 (2026-09, 流匹配 DiT 汉字排版)
-│       ├── qwen1/ & qwen1_5/ & qwen2/      # 早期代际归档
-│       ├── qwen2_5/                        # Qwen-2.5: QK-Norm 训练稳定化 + 128k 强大基座
-│       └── qwq/                            # QwQ: 强化学习长思维链推理模型
-├── mistralai/                              # Mistral AI
-│   ├── leanstral/leanstral_1_5/            # Leanstral 1.5 119B-A6B (2026-07, 紧凑 MoE)
-│   ├── shieldstral/shieldstral_1/          # Shieldstral 1.0 3B (2026-07, 安全对齐防御模型)
-│   ├── mistral/                            # Mistral Dense 系列 (mistral_7b, mistral_large)
-│   └── mixtral/                            # Mixtral 稀疏 MoE 系列 (mixtral_8x7b, 8x22b)
-├── google/                                 # Google DeepMind
-│   ├── gemma/gemma4/                       # Gemma 4 12B/31B (2026-06, 原生音视频文字一体多模态)
-│   ├── diffusiongemma/diffusiongemma_26b/  # DiffusionGemma 26B-A4B (2026-06, 首个 MoE 扩散模型)
-│   ├── embeddinggemma/embeddinggemma_2/    # EmbeddingGemma-2 (2026-09, 最新长文本向量化)
-│   └── gemma/gemma1/ & gemma2/             # 历史代际归档
-├── black_forest_labs/                      # Black Forest Labs (BFL)
-│   └── flux_3/                             # FLUX.3 系列
-│       └── flux_3_action/                  # FLUX-3-Action (2026-09, 具身智能动作生成 DiT)
-├── microsoft/                              # 微软 (Microsoft)
-│   └── phi/                                # Phi 系列 (小钢炮轻量模型)
-│       ├── phi1/                           # Phi-1 / 1.5: 教科书级高质量数据小模型
-│       ├── phi2/                           # Phi-2: 2.7B Dense 架构
-│       ├── phi3/                           # Phi-3: SuScaledRoPE 128k 长窗口 + 紧凑 Block
-│       └── phi4/                           # Phi-4: 14B 高性能合成数据推理模型
-├── tii/                                    # TII (阿布扎比技术创新研究所)
-│   └── falcon/                             # Falcon 系列 (并行注意力+MLP)
-│       ├── falcon_v1/                      # Falcon-7B/40B: Multi-Query Attention (MQA)
-│       └── falcon_v2/                      # Falcon-2 11B: 视觉融合与 MoE 探索
-├── 01ai/                                   # 零一万物 (01.AI)
-│   └── yi/                                 # Yi 系列
-│       ├── yi_v1/                          # Yi-34B: 200k 超长上下文预训练
-│       └── yi_1_5/                         # Yi-1.5: 提升代码与数学能力
-├── baichuan/                               # 百川智能 (Baichuan)
-│   └── baichuan/                           # Baichuan 系列
-│       ├── baichuan1/                      # Baichuan-7B (RoPE) / 13B (ALiBi)
-│       └── baichuan2/                      # Baichuan2: 预训练稳定化优化 (NormHead)
-├── zhipu/                                  # 智谱 AI (Zhipu AI)
-│   └── glm/                                # GLM 系列
-│       └── glm5_3/                         # GLM-5.3 Max / Flash (2026-08, AA 智能指数 44.8)
-├── moonshot/                               # 月之暗面 (Moonshot AI)
-│   └── kimi/                               # Kimi 系列
-│       └── k3/                             # Kimi K3 Max (2026-07, AA 智能指数 43.6, 长思考链)
-├── openbmb/                                # 面壁智能 (OpenBMB)
-│   └── minicpm/                            # MiniCPM 系列 (端侧小钢炮)
-│       ├── minicpm5/                       # MiniCPM5-2B (2026-09, ≤4B 官方榜首, 端侧长思考)
-│       └── minicpm_v4_6/                   # MiniCPM-V 4.6 1.3B (2026-05, 1B极速端侧多模态)
-├── minimax/                                # MiniMax (稀宇科技)
-│   ├── minimax_m/m3/                       # MiniMax-M3 (2026-06, 通用大模型)
-│   └── minimax_video/h3/                   # MiniMax H3 (2026-07, AA Video Arena 开源榜首 1137.4 Elo)
-├── lightricks/                             # Lightricks
-│   └── ltx_video/ltx_2_5/                  # LTX-2.5 Pro / Fast (2026-08, 22B 超高帧率开源视频生成)
-├── ibm/                                    # IBM Research
-│   └── granite/                            # Granite 系列
-│       ├── granite_4_2/                    # Granite 4.2 3B (2026-08, ≤4B 企业级紧凑端侧)
-│       └── granite_speech_5/               # Granite-Speech-5.0 (2026-10, 工业高速抗噪 ASR)
-├── nvidia/                                 # NVIDIA
-│   └── nemotron/                           # Nemotron 系列
-│       └── nemotron_3_5/                   # Nemotron 3.5 Lightning (2026-08, Tensor Core 极致对齐)
+├── models/                                 # 全球开源模型全景库
+│   ├── alibaba/                            # 阿里巴巴 (Alibaba Cloud / 通义实验室)
+│   │   ├── wan/                            # Wan (通义万相) 视频生成系列
+│   │   │   ├── wan3_0/                     # Wan 3.0 (2026-09, 原生音视频一体化生成, 30秒连续)
+│   │   │   └── wan2_2/                     # Wan 2.2 Animate 系列 (人物高保真动态生成)
+│   │   └── qwen/                           # 通义千问 (Qwen) 系列
+│   │       ├── qwen3_8/                    # Qwen 3.8-27B (2026-08, 64层原生多模态, SWE 61.7%)
+│   │       ├── qwen3_8_flash/              # Qwen 3.8-Flash-Next (2026-08, 512细粒度专家, 极速响应)
+│   │       ├── qwen3_8_moe/                # Qwen 3.8-2.4T-A95B (2026-08, 2.4万亿超大MoE基座)
+│   │       ├── qwen3_asr/                  # Qwen3-ASR 1.7B / ForcedAligner (2026-06, RTFx 835.6)
+│   │       ├── qwen_image/                 # Qwen-Image-2.1 (2026-09, 流匹配 DiT 汉字排版)
+│   │       ├── qwen1/ & qwen1_5/ & qwen2/  # 早期代际归档
+│   │       ├── qwen2_5/                    # Qwen-2.5: QK-Norm 训练稳定化 + 128k 强大基座
+│   │       └── qwq/                        # QwQ: 强化学习长思维链推理模型
+│   ├── deepseek/                           # 深度求索 (DeepSeek)
+│   │   ├── deepseek_v4/                    # 2026 前沿旗舰 MoE 系列 (>= 2026-05)
+│   │   │   ├── v4_1_flash/                 # V4.1 Flash (2026-09, 384细粒度MoE + 1M窗口, Codeforces 3471)
+│   │   │   ├── v4_pro/                     # V4 Pro 0813 (2026-08, 1.6T 万亿MoE旗舰)
+│   │   │   ├── v4_flash_dspark/            # V4 Flash DSpark (2026-07, 动态稀疏推理与马尔可夫排序)
+│   │   │   └── v4_flash_vision/            # V4 Flash Vision (2026-08, 原生多模态统一流)
+│   │   ├── deepseek_llm/                   # DeepSeek-LLM 稠密基础系列
+│   │   ├── deepseek_moe/                   # DeepSeek-MoE: 细粒度专家与共享专家首发
+│   │   ├── deepseek_v2/                    # DeepSeek-V2 / Lite: MLA (KV Cache 极度压缩)
+│   │   ├── deepseek_v3/                    # DeepSeek-V3: 671B 极致 MoE + MLA + 无辅助 Loss
+│   │   └── deepseek_r1/                    # DeepSeek-R1: 强化学习推理架构与长思维链
+│   ├── zhipu/                              # 智谱 AI (Zhipu AI)
+│   │   └── glm/glm5_3/                     # GLM-5.3 Max / Flash (2026-08, AA 智能指数 44.8)
+│   ├── moonshot/                           # 月之暗面 (Moonshot AI)
+│   │   └── kimi/k3/                        # Kimi K3 Max (2026-07, AA 智能指数 43.6, 长思考链)
+│   ├── openbmb/                            # 面壁智能 (OpenBMB)
+│   │   └── minicpm/                        # MiniCPM 系列 (端侧小钢炮)
+│   │       ├── minicpm5/                   # MiniCPM5-2B (2026-09, ≤4B 官方榜首, 端侧长思考)
+│   │       └── minicpm_v4_6/               # MiniCPM-V 4.6 1.3B (2026-05, 1B极速端侧多模态)
+│   ├── minimax/                            # MiniMax (稀宇科技)
+│   │   ├── minimax_video/h3/               # MiniMax H3 (2026-07, AA Video Arena 开源榜首 1137.4 Elo)
+│   │   └── minimax_m/m3/                   # MiniMax-M3 (2026-06, 通用大模型)
+│   ├── lightricks/                         # Lightricks
+│   │   └── ltx_video/ltx_2_5/              # LTX-2.5 Pro / Fast (2026-08, 22B 超高帧率开源视频生成)
+│   ├── black_forest_labs/                  # Black Forest Labs (BFL)
+│   │   └── flux_3/flux_3_action/           # FLUX-3-Action (2026-09, 具身智能动作生成 DiT)
+│   ├── google/                             # Google DeepMind
+│   │   ├── gemma/gemma4/                   # Gemma 4 12B/31B (2026-06, 原生音视频文字一体多模态)
+│   │   ├── diffusiongemma/diffusiongemma_26b/ # DiffusionGemma 26B-A4B (2026-06, 首个 MoE 扩散模型)
+│   │   ├── embeddinggemma/embeddinggemma_2/ # EmbeddingGemma-2 (2026-09, 最新长文本向量化)
+│   │   └── gemma/gemma1/ & gemma2/         # 历史代际归档
+│   ├── ibm/                                # IBM Research
+│   │   └── granite/                        # Granite 系列
+│   │       ├── granite_4_2/                # Granite 4.2 3B (2026-08, ≤4B 企业级紧凑端侧)
+│   │       └── granite_speech_5/               # Granite-Speech-5.0 (2026-10, 工业高速抗噪 ASR)
+│   ├── nvidia/                             # NVIDIA
+│   │   └── nemotron/nemotron_3_5/          # Nemotron 3.5 Lightning (2026-08, Tensor Core 极致对齐)
+│   ├── meta/                               # Meta (llama1, llama2, llama3, llama3_1, llama3_2)
+│   ├── mistralai/                          # Mistral AI (leanstral_1_5, shieldstral_1, mistral_7b, mixtral)
+│   ├── microsoft/                          # 微软 (phi1, phi2, phi3, phi4)
+│   ├── tii/                                # TII (falcon_v1, falcon_v2)
+│   ├── 01ai/                               # 零一万物 (yi_v1, yi_1_5)
+│   └── baichuan/                           # 百川智能 (baichuan1, baichuan2)
 ├── common/                                 # 通用算子与算法组件库
 │   ├── attention/                          # MHA, MQA, GQA, MLA, Sliding Window
 │   ├── rope/                               # RoPE, YaRN, Linear/NTK Scaling
 │   ├── norm/                               # RMSNorm, LayerNorm, DeepNorm
 │   ├── ffn_moe/                            # SwiGLU, TopK MoE, DeepSeekMoE
 │   └── quantization/                       # FP8, AWQ, GPTQ 核心原理
+├── scripts/                                # 自动化与工程辅助脚本
+│   └── verify_index.py                     # 全局索引、死链与相对路径自动化检测器
 ├── .agents/skills/                         # 项目自动化与情报追踪技能体系
 │   └── model-intelligence-crawler/         # 全模态权威排行榜追踪、抗渲染穿透与自更新 Skill
 └── docs/                                   # 理论研究与横向对比
@@ -172,12 +147,15 @@ llm-architectures/
 运行任意模型的独立架构实现并验证前向传播：
 
 ```bash
+# 验证索引与相对链接完好性
+python3 scripts/verify_index.py
+
 # 验证 DeepSeek-V3 核心 MLA + DeepSeekMoE 架构
-python deepseek/deepseek_v3/v3/modeling.py
+python models/deepseek/deepseek_v3/v3/modeling.py
 
 # 验证 LLaMA-3 架构
-python meta/llama/llama3/modeling.py
+python models/meta/llama/llama3/modeling.py
 
 # 验证 Qwen-2.5 (QK-Norm + GQA) 架构
-python alibaba/qwen/qwen2_5/modeling.py
+python models/alibaba/qwen/qwen2_5/modeling.py
 ```

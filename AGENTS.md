@@ -20,23 +20,26 @@
 ## 2. 目录规范与组织架构
 
 ### 2.1 目录组织原则
-项目严格遵循三级模型分类树：
+项目严格遵循四级模型分类树（所有开源公司统一收敛在 `models/` 目录下）：
 ```text
 llm-architectures/
-├── <开源公司或机构 (Vendor)>/
-│   └── <模型系列 (Series)>/
-│       └── <具体版本 (Version)>/
-│           ├── README.md               # 该版本的架构详解卡片（配置、算法特性、网络拓扑）
-│           ├── modeling.py             # 最小化独立 PyTorch 模型实现（核心 Transformer / Attention / MoE）
-│           └── config.json (可选)      # 典型超参数配置
+├── models/                             # 全球开源模型主目录
+│   └── <开源公司或机构 (Vendor)>/
+│       └── <模型系列 (Series)>/
+│           └── <具体版本 (Version)>/
+│               ├── README.md           # 该版本的架构详解卡片（配置、算法特性、网络拓扑）
+│               ├── modeling.py         # 最小化独立 PyTorch 模型实现（核心 Transformer / Attention / MoE）
+│               └── config.json (可选)  # 典型超参数配置
 ├── common/                             # 通用算子与算法组件库
 │   ├── attention/                      # MHA, MQA, GQA, MLA, Sliding Window, Linear Attention
 │   ├── rope/                           # RoPE, YaRN, RoPE Scaling, Dynamic NTK
 │   ├── norm/                           # RMSNorm, LayerNorm, DeepNorm
 │   ├── ffn_moe/                        # SwiGLU, DeepSeekMoE, Mixtral MoE
 │   └── quantization/                   # FP8, AWQ, GPTQ 概念与结构适配
+├── scripts/                            # 质量保障与自动化工具
+│   └── verify_index.py                 # 全局索引检测脚本（提交前必跑）
 ├── .agents/skills/                     # 项目自动化与情报追踪技能体系
-│   └── model-intelligence-crawler/     # 全模态权威排行榜追踪、站点探活与自我演进 Skill
+│   └── model-intelligence-crawler/     # 全模态权威排行榜追踪、抗渲染穿透与自更新 Skill
 └── docs/                               # 论文精读、演进矩阵与横向对比
     ├── comparisons/                    # 架构横向对比分析与最新 SOTA 榜单
     └── templates/                      # 架构卡片标准模版与编写指南
@@ -79,7 +82,9 @@ llm-architectures/
 1. **查证官方资料与权威来源**：优先查阅官方技术报告（arXiv）、官方 GitHub 官方仓库开源建模代码（或 HuggingFace `transformers/src/transformers/models/...` 中的官方提交）。严禁主观凭空臆测超参数与模块连接。
 2. **检查与遵循目录规范**：在 `vendor/series/version/` 确切路径下作业。如果属于通用算法，应下沉或引用 `common/` 模块。
 3. **测试自洽性**：编写的 `modeling.py` 必须能够独立运行并输出预期的 Tensor Shape，无未捕获异常。
-4. **更新全局索引**：完成新模型添加后，同步更新根目录 `README.md` 的模型演进矩阵与导航索引。
+4. **更新全局索引与死链检查**：
+   - 完成新模型添加后，同步更新根目录 `README.md` 的模型演进矩阵与导航索引；
+   - **提交前必须运行 `python3 scripts/verify_index.py`**，确保无死链、相对路径有效方可 Commit。
 5. **Git 规范**：
    - 提交信息遵循 Conventional Commits 规范，例如：
      - `feat(meta/llama3): add llama3 architecture notes and minimal modeling`
