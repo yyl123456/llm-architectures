@@ -6,8 +6,10 @@
 
 ## 1. 项目愿景与核心定位
 
-本项目专注于**开源大模型（LLM / VLM / MoE）的模型网络结构、数学原理、核心算法与代码实现**。
+本项目专注于**开源大模型（LLM / VLM / DiT / MoE）的模型网络结构、数学原理、核心算法与代码实现**。
 通过统一规范的目录组织、清晰精炼的最小实现（PyTorch / NumPy）以及深度架构对比，建立一个系统化、高置信度的大模型架构演进知识库与复现代码库。
+
+在调研和复现过程中，深度吸收并借鉴全球顶级模型架构分析站点（如 **Sebastian Raschka 的 LLM Architecture Gallery** 架构图解与并排 Diff 对比、**Frontier ML Open Model Index** 硬件工程与显存参数索引、**zhanglpg 的 LLM & Multimodal Architecture Atlas** 全模态图谱，以及 **LLM Architectures Explained** 核心算子数学推导）的最佳实践与拓扑表达规范。
 
 ### 核心目标
 1. **结构严谨**：严格遵循 `开源公司/系列/版本/`（`vendor/series/version/`）层级，结构清晰可扩展。

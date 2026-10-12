@@ -123,6 +123,38 @@
       "status": "active",
       "confidence": "high",
       "evaluation_type": "海量文本向量化多任务学术与检索基准"
+    },
+    {
+      "id": "raschka_gallery",
+      "category": "模型架构图解与可视化对比 (首选)",
+      "name": "LLM Architecture Gallery",
+      "author": "Sebastian Raschka",
+      "focus": "直观架构拓扑图、Attention/MoE/Norm层序拓扑、支持双模型并排对比、持续高频更新",
+      "url": "https://sebastianraschka.com/llm-architecture-gallery/",
+      "status": "active",
+      "confidence": "very-high",
+      "evaluation_type": "架构可视化拓扑图解与横向差异比对"
+    },
+    {
+      "id": "frontier_ml_index",
+      "category": "硬件工程与参数配置查询",
+      "name": "Frontier ML — Open Model Index",
+      "focus": "Transformer 深度、宽度、Attention/Expert 配比、上下文窗口、部署显存估算、支持三模型并排对比",
+      "url": "https://frontiermlnp.com/models",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "硬件工程参数与显存占用实时索引"
+    },
+    {
+      "id": "multimodal_arch_atlas",
+      "category": "全模态架构图谱与拓扑检索",
+      "name": "LLM & Multimodal Architecture Atlas",
+      "author": "zhanglpg",
+      "focus": "涵盖纯文本LLM、多模态VLM、图像及视频生成DiT架构；查询层数、MoE Routing、Normalization及完整架构图",
+      "url": "https://zhanglpg.github.io/model-atlas/",
+      "status": "active",
+      "confidence": "high",
+      "evaluation_type": "全模态架构全景图谱与拓扑分解"
     }
   ]
 }

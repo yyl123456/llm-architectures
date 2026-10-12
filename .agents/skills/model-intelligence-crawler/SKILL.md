@@ -50,11 +50,25 @@ description: 专门用于在大模型全模态前沿生态中搜寻、抓取、�
 
 ---
 
-## 3. 标准化执行脚本与自检工具
+## 3. 模型结构分析与架构拓扑权威图鉴 (Architecture Deep-Dive Registries)
+
+在对模型结构进行微观代码剖析、绘制张量拓扑流转图与硬件显存推导时，统一优先参考以下**高置信度架构专业分析站点**：
+
+| 分析维度 / 用途 | 权威架构分析站点 | 核心参考价值与独特优势 | 官方链接 |
+|---|---|---|---|
+| 👑 **架构图解与可视化对比 (首选)** | **LLM Architecture Gallery** (Sebastian Raschka) | **权威专家高频维护**。提供直观规范的 Block/Attention/MoE 拓扑示意图，支持两个模型之间直接选定进行并排结构差异（Diff）比对，附带最新更新日志与官方变迁说明。 | [https://sebastianraschka.com/llm-architecture-gallery/](https://sebastianraschka.com/llm-architecture-gallery/) |
+| 🛠️ **硬件工程与显存配置查询** | **Frontier ML — Open Model Index** | **偏向底层硬件与推理部署**。深度汇总 Transformer 深度 (Layers)、隐藏层宽度 (Hidden Dim)、Attention 头数配比、MoE 专家数、上下文限制以及端到端部署显存 (VRAM) 占用；支持三个模型横向并排比较，高频自动同步。 | [https://frontiermlnp.com/models](https://frontiermlnp.com/models) |
+| 🌐 **全模态多模态架构图谱** | **LLM & Multimodal Architecture Atlas** (zhanglpg) | **打破纯文本局限**。全景覆盖纯文本 LLM、多模态视觉语言 (VLM)、图像及视频生成扩散 (DiT) 架构。可精准检索层数、MoE Routing、Norm 方式、Attention 类型及完整拓扑图。 | [https://zhanglpg.github.io/model-atlas/](https://zhanglpg.github.io/model-atlas/) |
+| 🔬 **核心特殊算子原理深度解析** | **LLM Architectures Explained** | 专注于大模型核心算法演进与原理公式推导：深入拆解 MLA (低秩潜在注意力)、GQA、滑动窗口 SWA、稀疏注意力、线性注意力、DeltaNet、Mamba 状态空间、MoE 路由与无辅助损失平衡等，追溯至官方原始论文与代码。 | [LLM Architectures Explained](https://github.com/) |
+| 📊 **架构超参数横向大宽表** | **LLM Architecture Comparison Table** | 适合横向快速通览新旧模型结构参数：横跨 Depth、Dim、Norm、Activation、Attention 类型、MoE 规模、位置编码等超参数的大型横向比对矩阵。 | [LLM Architecture Comparison](https://github.com/) |
+
+---
+
+## 4. 标准化执行脚本与自检工具
 
 本技能内建了自动化检测与时间过滤工具：
 
-### 3.1 运行严时限 (>= 2026-05) 实时抓取器
+### 4.1 运行严时限 (>= 2026-05) 实时抓取器
 ```bash
 python3 .agents/skills/model-intelligence-crawler/scripts/fetch_latest_sota.py
 ```
@@ -63,14 +77,14 @@ python3 .agents/skills/model-intelligence-crawler/scripts/fetch_latest_sota.py
 2. **强制剔除所有 `< 2026-05-01` 的老模型**；
 3. 输出经过时间戳审查的合法模型清单与指标。
 
-### 3.2 运行网络健康与连通性探活
+### 4.2 运行网络健康与连通性探活
 ```bash
 python3 .agents/skills/model-intelligence-crawler/scripts/benchmark_prober.py
 ```
 
 ---
 
-## 4. 榜单动态演进与自我更新协议 (Self-Updating Protocol)
+## 5. 榜单动态演进与自我更新协议 (Self-Updating Protocol)
 
 当 Agent 或协作者发现以下情况时，必须更新本技能：
 1. **站点失效或改版**：若某一 URL 连续 3 次返回 404 或前端结构重构，必须用 Jina Reader 探寻新入口，并更新 `sources.json` 与 `SKILL.md`；

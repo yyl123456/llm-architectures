@@ -18,6 +18,12 @@
 
 不同机构、不同系列、不同代际的模型在设计权衡（推理吞吐、KV Cache 内存占用、训练稳定性、上下文扩展能力）上各有千秋。本项目旨在提供清晰的**分层目录结构**与**极简自洽的独立实现**，帮助算法工程师与系统开发者透彻掌握每一个架构细节。
 
+在分析与复现过程中，本项目深度借鉴并吸收了以下全球高信度模型结构分析工具与站点的最佳实践：
+- [Sebastian Raschka's LLM Architecture Gallery](https://sebastianraschka.com/llm-architecture-gallery/)：高频维护的模块拓扑图与模型双向结构 Diff 对比；
+- [Frontier ML — Open Model Index](https://frontiermlnp.com/models)：偏硬件工程维度的 Transformer 深度、宽度、专家配比与部署显存预估；
+- [LLM & Multimodal Architecture Atlas](https://zhanglpg.github.io/model-atlas/)：涵盖文本、多模态视觉 (VLM) 与视频生成 DiT 的全景拓扑图谱；
+- **LLM Architectures Explained** & **LLM Architecture Comparison Table**：针对 MLA、SWA、Mamba、MoE 动态路由等核心算子的数学推导与全参横向矩阵。
+
 ---
 
 ## 2. 目录体系：开源公司 / 系列 / 版本
