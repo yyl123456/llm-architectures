@@ -79,22 +79,45 @@ llm-architectures/
 
 ---
 
-## 4. Agent 执行工作流与行为规范
+## 4. Agent 执行工作流与行为规范 (Core Protocols)
 
-当 Agent 受托添加或更新模型结构时，必须遵循以下步骤：
+当 Agent 受托添加、调研或更新模型结构时，必须严格执行以下七大刚性法则：
 
-1. **查证官方资料与权威来源**：优先查阅官方技术报告（arXiv）、官方 GitHub 官方仓库开源建模代码（或 HuggingFace `transformers/src/transformers/models/...` 中的官方提交）。严禁主观凭空臆测超参数与模块连接。
-2. **检查与遵循目录规范**：在 `vendor/series/version/` 确切路径下作业。如果属于通用算法，应下沉或引用 `common/` 模块。
-3. **测试自洽性**：编写的 `modeling.py` 必须能够独立运行并输出预期的 Tensor Shape，无未捕获异常。
-4. **更新全局索引、模型导航与死链检查**：
-   - 完成新模型添加后，同步更新根目录 `README.md` 的模型演进矩阵；
-   - **必须同步更新 `models/README.md`（模型总导航卡片）**，在对应的前沿模型表格或经典基石表格中追加一行，并提供精准的相对路径链接；
-   - **提交前必须运行 `python3 scripts/verify_index.py`**，确保无死链、相对路径有效方可 Commit。
-5. **Git 规范**：
-   - 提交信息遵循 Conventional Commits 规范，例如：
-     - `feat(meta/llama3): add llama3 architecture notes and minimal modeling`
-     - `feat(deepseek/v3): implement mla and deepseekmoe block`
-     - `docs(common/rope): add yarn and dynamic ntk analysis`
+### 4.1 深入源码与抗渲染数据穿透 (Anti-Rendering Ground Truth)
+1. **穿透 SPA / 客户端渲染**：
+   - 现代榜单（如 Artificial Analysis、LiveCodeBench、SWE-bench）普遍采用 Next.js App Router 或 React SPA，直接发起常规 HTTP 请求常遇空白或 `Loading...` 假死；
+   - **严禁因抓取阻碍而退回大模型先验记忆或编造伪造数据**；
+   - 必须优先使用内建工具：Jina Reader 代理（`https://r.jina.ai/<url>`）、逆向 Next.js `self.__next_f.push` 动态数据切片，或直连官方 Hugging Face Hub API 提取原始 JSON/CSV 底层真实数值。
+2. **拒绝粗糙概括，严查层级异构性 (Heterogeneous Layer Specialization)**：
+   - 严禁将深层 Transformer 笼统当成“均一雷同的重复结构（Block × N）”；
+   - 必须通过官方推理代码（如 `inference/model.py`）核实各层的特殊分工：确认哪些层是 KV 压缩动力源（Compressor）、哪些层是跳跃索引源（Indexer）、哪些层外挂了超大词表记忆（如 Engram 16M 词表）、哪些层启用了专用动态稀疏（如 DSpark）以及残差超连接机制（Hyper-Connections）。
+
+### 4.2 严时限门禁与前沿模型淘汰准则 (Strict Post-2026-05 Rule)
+1. **时效性铁律**：所有作为前沿 SOTA 收录的模型，必须标明确切发布时间（`Release Date`）；
+2. **强制硬性淘汰**：凡发布时间**早于 2026 年 5 月 1 日（< 2026-05-01）的老模型一律 PASS 剔除**，作为历史基准归档，绝不允许作为当前最新 SOTA 推荐。
+
+### 4.3 紧邻上一小版本精准差分 (Delta Analysis vs Immediate Predecessor)
+1. **严禁跨古代际比较**：例如分析 V4.1 时，严禁越级去和两年前的远古版本（如 V3）比较；
+2. **必须直接对齐紧邻的前一个小版本**（如 V4.1-Flash 直接对比 V4-Flash-0731）：
+   - 逐个字段对比隐藏层宽度、层数增减、路由专家数、压缩分桶、投机预测层数等关键参数的精准差值；
+   - 阐明小版本迭代背后的具体工程权衡与收益。
+
+### 4.4 架构可视化图解本地化移植 (Architecture Assets Localization)
+1. 深度借鉴权威专业站点（**Sebastian Raschka 的 LLM Architecture Gallery**、**zhanglpg 的 Model Atlas**、**Frontier ML**）的最佳拓扑表达；
+2. 遇到权威架构示意图时，**必须将高清原图下载保存至 `assets/architectures/` 本地目录**，杜绝外部链接失效或防盗链拦截；
+3. 在模型 `README.md` 中以相对路径形式规范内嵌（说明：使用 Markdown 图片语法链接至 `assets/architectures/` 相应文件）。
+
+### 4.5 代码自洽性与测试验证
+- 编写的 `modeling.py` 必须基于纯 PyTorch 原生实现，且必须在本地通过 `python3 -m py_compile` 与独立单元测试验证，确保输出 Tensor 形状无误。
+
+### 4.6 全局索引联动与提交前死链检测 (Zero Broken Links Gate)
+- 新增模型后，必须同步更新：
+  1. 根目录 `README.md` 中的目录树与导航索引；
+  2. `models/README.md` 中的结构化模型导航总表（去除重复公司/系列冗余名，保持层级箭头视觉清爽）；
+- ⚠️ **提交前硬性门禁**：**必须运行 `python3 scripts/verify_index.py`**，确认全库 Markdown 相对路径 100% 存在且无死链，方可执行 `git commit`。
+
+### 4.7 规范化 Git 提交 (Conventional Commits)
+- 提交信息遵循规范，如 `feat(models): ...`、`docs(deepseek): ...`、`style(models): ...`，并及时推送到 GitHub 远端仓库。
 
 ---
 
