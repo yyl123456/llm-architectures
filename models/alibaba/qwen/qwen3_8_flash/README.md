@@ -26,6 +26,15 @@
    - 保证了单步生成浮点运算量（FLOPs）极其轻量，而知识容量大幅超越同级模型。
 2. **极速首字响应与超高吞吐 (Instant First-Token Latency)**：
    - 专为复杂 Agentic 反思循环与即时代码生成设计，吞吐性能在消费级单卡上保持领先。
-3. **沉淀研究方向**：
-   - 512 路由专家的 Top-10 Gating 分发与负载均衡机制；
-   - Qwen4 实验性架构（`qwen4_exp_text`）的前向流转机制。
+
+---
+
+## 3. 架构拓扑示意图 (Raschka Gallery 视觉呈现)
+
+![Qwen3.8-Flash-Next Architecture](<../../../../assets/architectures/qwen3-8-flash-next.webp>)
+
+---
+
+## 4. 沉淀研究方向：
+1. 512 路由专家的 Top-10 Gating 分发与负载均衡机制；
+2. Qwen4 实验性架构（`qwen4_exp_text`）的前向流转机制。

@@ -24,6 +24,15 @@
    - 384 个细粒度路由专家，单 Token 激活 6 个路由专家，兼顾知识深度与计算效率。
 2. **世界级知识检索与深度科学推理**：
    - SuperGPQA 达 **53.9%**，SimpleQA-Verified 达 **55.2%**，在开源领域知识评测中处于绝对领先地位。
-3. **沉淀研究方向**：
-   - 超大规模专家通信拓扑（All-to-All 优化）；
-   - 万亿参数模型的 FP8 / NVFP4 稳定训练方案。
+
+---
+
+## 3. 架构拓扑示意图 (Raschka Gallery 视觉呈现)
+
+![DeepSeek-V4-Pro Architecture](<../../../../assets/architectures/deepseek-v4-pro.webp>)
+
+---
+
+## 4. 沉淀研究方向：
+1. 超大规模专家通信拓扑（All-to-All 优化）；
+2. 万亿参数模型的 FP8 / NVFP4 稳定训练方案。

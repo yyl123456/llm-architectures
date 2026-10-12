@@ -20,3 +20,15 @@
    - 原生集成音频、视觉与文本 Token，统一解码。
 2. **极深 Transformer 稳定性设计**：
    - 继承 Gemma 家族 Dual RMSNorm 与 Logit Soft-capping 机制，结合交替滑动窗口注意力，兼顾长程与局部感受野。
+
+---
+
+## 3. 架构拓扑示意图 (Raschka Gallery 视觉呈现)
+
+![Gemma-4 Architecture](<../../../../assets/architectures/gemma-4-31b.webp>)
+
+---
+
+## 4. 重点关注机制
+- 局部滑动窗口注意力与全局注意力交替堆叠；
+- 语言与多模态音视频特征的双重归一化稳定性控制。

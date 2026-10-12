@@ -27,6 +27,12 @@ Layer Index:
 [40, 41, 42] ─────────── 🔮 Next-3-Predict MTP 投机解码层 (DSparkBlock 独立专家群)
 ```
 
+### 官方/权威高分辨率架构拓扑示意图 (Raschka Gallery 视觉呈现)
+
+![DeepSeek-V4.1-Flash Architecture](<../../../../assets/architectures/deepseek-v4-1-flash.webp>)
+
+> *图释：展示了从输入 Embedding、浅层 Engram 词法注入、等距分布的 Compressor / Indexer 动力源，到 384 细粒度 MoE 路由与顶部 DSpark / MTP 联合推测层的全景数据流转。*
+
 ---
 
 ## 2. 七大异构层类别详解 (Layer Classifications)
