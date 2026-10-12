@@ -64,7 +64,9 @@ llm-architectures/
 2. **核心架构亮点**：例如引入了何种 Attention（GQA/MLA）、何种 MoE（Top-K / 共享专家 / 路由偏置）、何种归一化（RMSNorm）、何种激活函数（SwiGLU）。
 3. **架构拓扑与张量流转图**：ASCII 或 Mermaid 图表展示 Block 级前向流程。
 4. **核心超参数对照表**：`vocab_size`, `hidden_size`, `num_hidden_layers`, `num_attention_heads`, `num_key_value_heads`, `intermediate_size` 等。
-5. **相比前序版本的演进要点**：改动动机、效果及工程考量。
+5. **相比上一小版本的演进要点 (Delta Analysis vs Immediate Predecessor)**：
+   - ⚠️ **严禁跨越远古代际对比**（例如 V4.1 严禁只和两年前的 V3 对比）；
+   - **必须直接对齐紧邻的上一小版本**（如 V4.1-Flash 直接对比 V4-Flash-0731），逐个字段对比参数改动数值与动机。
 
 ### 3.2 `modeling.py`（最小化实现）
 - 必须基于原生 PyTorch 实现（避免重度依赖第三方庞大框架），代码具备可读性、模块化和完整的类型标注与张量 Shape 注释。
