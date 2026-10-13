@@ -71,15 +71,19 @@ llm-architectures/
 
 对任何一个具体的模型版本（如 `deepseek/deepseek_v3/v3/` 或 `meta/llama/llama3/`），标准交付物包括：
 
-### 3.1 `README.md`（架构卡片）
+### 3.1 `README.md`（架构卡片与技术文档组织）
 须包含以下小节：
 1. **基本概览**：开源机构、开源时间、基座规模（参数量、激活参数量）、上下文窗口长度、官方论文/技术报告链接。
 2. **核心架构亮点**：例如引入了何种 Attention（GQA/MLA）、何种 MoE（Top-K / 共享专家 / 路由偏置）、何种归一化（RMSNorm）、何种激活函数（SwiGLU）。
-3. **架构拓扑与张量流转图**：ASCII 或 Mermaid 图表展示 Block 级前向流程。
+3. **架构拓扑与张量流转图**：ASCII 或 Mermaid 图表展示 Block 级前向流程，并内嵌本地架构图（`assets/architectures/`）。
 4. **核心超参数对照表**：`vocab_size`, `hidden_size`, `num_hidden_layers`, `num_attention_heads`, `num_key_value_heads`, `intermediate_size` 等。
 5. **相比上一小版本的演进要点 (Delta Analysis vs Immediate Predecessor)**：
-   - ⚠️ **严禁跨越远古代际对比**（例如 V4.1 严禁只和两年前的 V3 对比）；
-   - **必须直接对齐紧邻的上一小版本**（如 V4.1-Flash 直接对比 V4-Flash-0731），逐个字段对比参数改动数值与动机。
+   - ⚠️ **严禁跨越远古代际对比**；
+   - **必须直接对齐紧邻的上一小版本**，逐个字段对比参数改动数值与动机。
+6. **技术模块化分拆规范 (Modular Topic Separation)**：
+   - ⚠️ **严禁将所有长篇推导和细节全部塞进单一 README.md**；
+   - 复杂、独立的前沿技术（如 Engram 词法外挂、DSpark 稀疏引擎、分层 KV 压缩、Hyper-Connections 残差流、小版本 Diff 等），**必须在模型目录下创建 `docs/` 子目录并分拆为独立的专题 Markdown 文档**；
+   - 模型主目录的 `README.md` 承担**总导航卡片 (Architecture Hub)** 角色，通过超链接索引并直达各个技术文档，保持主文档清爽、结构分明、易于展开阅读。
 
 ### 3.2 `modeling.py`（最小化实现）
 - 必须基于原生 PyTorch 实现（避免重度依赖第三方庞大框架），代码具备可读性、模块化和完整的类型标注与张量 Shape 注释。
